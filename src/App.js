@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Particles className='particles' params={ParicleParameters}/>
-      <div className='spread pa2'>
+      <div className='spread pa2 pt4'>
         <Logo />
         <Navigation />        
       </div>
