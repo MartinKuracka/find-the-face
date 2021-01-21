@@ -7,6 +7,11 @@
   justify-content: center;
 }
 
+.spread {
+  display: flex;
+  justify-content: space-between;
+}
+
 .particles {
   position: fixed;
   top: 0;
