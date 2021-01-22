@@ -1,4 +1,4 @@
-const ParicleParameters = {
+const ParticleParameters = {
   particles: {
     number: {
       value: 100,
@@ -27,4 +27,4 @@ const ParicleParameters = {
   }
 }
 
-export default ParicleParameters;
+export default ParticleParameters;
