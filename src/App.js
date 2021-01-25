@@ -3,6 +3,8 @@ import './App.css';
 import Navigation from './components/navigation/navigation';
 import Logo from './components/logo/logo';
 import Rank from './components/rank/rank';
+import SignIn from './components/signin/signin';
+import Register from './components/register/register';
 import ImageLinkForm from './components/ImageLinkForm/imageLinkForm';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import ParticleParameters from './components/particles';
@@ -18,6 +20,7 @@ class App extends React.Component {
       input: '',
       imageUrl: '',
       box: {},
+      route: 'signin',
     }
   };
 
@@ -41,9 +44,14 @@ class App extends React.Component {
 
   onInputChange = (event) => {
     this.setState({input: event.target.value});
-  };
+  }
 
-        // so you would change from:
+  onRouteChange = (route) => {
+    this.setState({route: route})
+  }
+
+
+        //  you would change from:
         // .predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
         // to:
         // .predict('c0c0ac362b03416da06ab3fa36fb58e3', this.state.input)
@@ -54,25 +62,41 @@ class App extends React.Component {
      app.models.predict(Clarifai.FACE_DETECT_MODEL,this.state.input)
       .then (response => this.displayFaceBox(this.calculateFaceLocation(response)))    
       .catch (error => console.log(error))    
-  };
+  }
 
-  onLoginIn = () => {
-    console.log('logging In')
-  };
+  // onLoginOut = () => {
+  //   console.log('logging Out')
+  //   this.setState({route: 'signin'})
+  // };
 
-  render() {
+  render() { 
+    const {box, imageUrl, route} = this.state; // this is to get rid of the this.state in whole render statement for cleaner code for parameters in the {}.
     return (
       <div className="App">
         <Particles className='particles' params={ParticleParameters}/>
-        <div className='spread pa2'>
-          <Logo/>
-          <Navigation onLoginIn={this.onLoginIn}/>        
-        </div>
-        <Rank />
-        <ImageLinkForm 
-          onInputChange={this.onInputChange} 
-          onButtonSubmit={this.onButtonSubmit}/>
-        <FaceRecognition box={this.state.box} imageUrl={this.state.imageUrl} />
+        { route === 'home'  // condition - if the route state is 'signin', will show sign in form. If the state of route is different, will show the rest after :. ? is for IF and : is for ELSE
+          ? <div>
+              <div className='spread pa2'>
+                <Logo/>
+                <Navigation onRouteChange={this.onRouteChange}/>        
+              </div>
+              <Rank />
+              <ImageLinkForm 
+                onInputChange={this.onInputChange} 
+                onButtonSubmit={this.onButtonSubmit}/>
+              <FaceRecognition box={box} imageUrl={imageUrl} />
+            </div>          
+          : (route === 'signin' 
+            ? <div>
+                <Logo />
+                <SignIn onRouteChange={this.onRouteChange}/>
+              </div>
+            : <div>
+                <Logo />
+                <Register onRouteChange={this.onRouteChange}/>
+              </div>
+            )
+        }
       </div>
     )
   };
