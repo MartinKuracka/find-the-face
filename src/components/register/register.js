@@ -10,27 +10,27 @@ const Register = ({onRouteChange}) => {
 				      <legend className="f2 fw6 ph0 mh0">Register</legend>
 				       <div className="mt3">
 				        <label className="db fw6 lh-copy f6" htmlFor="name">Name</label>
-				        <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text" name="name"  id="name" />
+				        <input className="pa2 br2 input-reset ba bg-transparent hover-bg-blue hover-white w-100" type="text" name="name"  id="name" />
 				      </div>
 				      <div className="mt3">
-				        <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
-				        <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="email" name="email-address"  id="email-address" />
+				        <label className="db bafw6 lh-copy f6" htmlFor="email-address">Email</label>
+				        <input className="pa2 br2 input-reset ba bg-transparent hover-bg-blue hover-white w-100" type="email" name="email-address"  id="email-address" />
 				      </div>
 				      <div className="mv3">
 				        <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
-				        <input className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="password" name="password"  id="password" />
+				        <input className="b pa2 br2 input-reset ba bg-transparent hover-bg-blue hover-white w-100" type="password" name="password"  id="password" />
 				      </div>				      
 				    </fieldset>
 				    <div className='center w-100'>
 					    <div className="center">
 					      <input 				      	
-					      	onClick={() => onRouteChange('signin')} className="pa3 pv2 input-reset br2 ba b--black bg-transparent bg-blue white grow pointer f5 dib" 
+					      	onClick={() => onRouteChange('signin')} className="pa3 pv2 input-reset br2 ba b--black bg-transparent bg-dark-blue white grow pointer f5 dib" 
 					      	type="submit" 
 					      	value="Sign In" />
 					    </div>		
 					    <div className="center">
 					      <input 				      	
-					      	onClick={() => onRouteChange('home')} className="pa3 pv2 input-reset ba b--black br2 bg-transparent bg-blue white grow pointer f5 dib" 
+					      	onClick={() => onRouteChange('home')} className="pa3 pv2 input-reset ba b--black br2 bg-transparent bg-dark-blue white grow pointer f5 dib" 
 					      	type="submit" 
 					      	value="Register" />
 					    </div>	

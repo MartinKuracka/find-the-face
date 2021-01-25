@@ -10,17 +10,17 @@ const SignIn = ({imageUrl, box, onRouteChange}) => {
 				      <legend className="f2 fw6 ph0 mh0">Sign In</legend>
 				      <div className="mt3">
 				        <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
-				        <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="email" name="email-address"  id="email-address" />
+				        <input className="pa2 br2 input-reset ba bg-transparent hover-bg-blue hover-white w-100" type="email" name="email-address"  id="email-address" />
 				      </div>
 				      <div className="mv3">
 				        <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
-				        <input className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="password" name="password"  id="password" />
+				        <input className="b pa2 br2 input-reset ba bg-transparent hover-bg-blue hover-white w-100" type="password" name="password"  id="password" />
 				      </div>				      
 				    </fieldset>
 				    <div className="">
 				      <input 
 				      	onClick={() => {onRouteChange('home')}}
-				      	className="ph3 br2 bg-blue white pv2 input-reset ba b--black bg-transparent grow pointer f5 dib" 
+				      	className="ph3 br2 bg-dark-blue white pv2 input-reset ba b--black bg-transparent grow pointer f5 dib" 
 				      	type="submit" 
 				      	value="Sign in" />
 				    </div>
