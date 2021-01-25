@@ -7,16 +7,9 @@ import ImageLinkForm from './components/ImageLinkForm/imageLinkForm';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import ParticleParameters from './components/particles';
 import Particles from 'react-particles-js';
-// import {ClarifaiStub, grpc} from "clarifai-nodejs-grpc";
+import Clarifai from "clarifai";
 
-
-// let app = new Clarifai.App({apiKey: '0d1a8485d84b452cb18e6d822cfc78e2'});
-// const {ClarifaiStub, grpc} = require("clarifai-nodejs-grpc");
-
-// const stub = ClarifaiStub.grpc();
-
-// const metadata = new grpc.Metadata();
-// metadata.set("authorization", "0d1a8485d84b452cb18e6d822cfc78e2");
+let app = new Clarifai.App({apiKey: '0d1a8485d84b452cb18e6d822cfc78e2'});
 
 class App extends React.Component {
   constructor() {
@@ -31,31 +24,22 @@ class App extends React.Component {
     this.setState({input: event.target.value});
   };
 
+        // so you would change from:
+        // .predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
+        // to:
+        // .predict('c0c0ac362b03416da06ab3fa36fb58e3', this.state.input)
+
   onButtonSubmit = () => {
-    // console.log('click');
+    console.log('click');
     this.setState({imageUrl: this.state.input})
-    // stub.PostModelOutputs( {
-    //       model_id: "aaa03c23b3724a16a56b629203edc62c",
-    //       inputs: [{data: {image: {url: "https://samples.clarifai.com/dog2.jpeg"}}}]
-    //   },
-    //   metadata,
-    //   (err, response) => {
-    //       if (err) {
-    //           console.log("Error: " + err);
-    //           return;
-    //       }
-
-    //       if (response.status.code !== 10000) {
-    //           console.log("Received failed status: " + response.status.description + "\n" + response.status.details);
-    //           return;
-    //       }
-
-    //       console.log("Predicted concepts, with confidence values:")
-    //       for (const c of response.outputs[0].data.concepts) {
-    //           console.log(c.name + ": " + c.value);
-    //       }
-    //   }
-    // );
+     app.models.predict(Clarifai.FACE_DETECT_MODEL,this.state.input).then (
+          function (response) {
+          console.log(response.outputs[0].data.regions[0].region_info.bounding_box)
+          },
+          function (err) {
+               //waht to do when err
+          }
+    )
   };
 
   onLoginIn = () => {
