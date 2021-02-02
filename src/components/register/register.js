@@ -23,6 +23,7 @@ class Register extends React.Component {
 	}
 
 	onSubmitRegister = () => {
+		this.props.onRouteChange('home')
 		console.log(this.state.name)
 		console.log(this.state.email)
 		console.log(this.state.password)
@@ -47,7 +48,7 @@ class Register extends React.Component {
 
 	render() {
 	  return (
-	    <div className='center ma mt6-l'>
+	    <div className='center ma mt3-l'>
 	    	<article className=" w-30 w-50-m center br3 pa3 pa3-ns mv2 ba shadow-2">
 		   		<main className="pa4 black-80">
 					  <div className="measure">
@@ -56,7 +57,7 @@ class Register extends React.Component {
 					       <div className="mt3">
 					        <label className="db fw6 lh-copy f6" htmlFor="name">Name</label>
 					        <input 
-					        	className="pa2 br2 input-reset ba bg-transparent hover-bg-blue hover-white w-100" 
+					        	className="pa2 br2 input-reset bg-transparent hover-bg-blue hover-white w-100" 
 					        	type="text" 
 					        	name="name"  
 					        	id="name" 
@@ -66,7 +67,7 @@ class Register extends React.Component {
 					      <div className="mt3">
 					        <label className="db bafw6 lh-copy f6" htmlFor="email-address">Email</label>
 					        <input 
-					        	className="pa2 br2 input-reset ba bg-transparent hover-bg-blue hover-white w-100" 
+					        	className="pa2 br2 input-reset bg-transparent hover-bg-blue hover-white w-100" 
 					        	type="email" 
 					        	name="email-address"  
 					        	id="email-address" 
@@ -76,7 +77,7 @@ class Register extends React.Component {
 					      <div className="mv3">
 					        <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
 					        <input 
-					        	className="b pa2 br2 input-reset ba bg-transparent hover-bg-blue hover-white w-100" 
+					        	className="b pa2 br2 input-reset bg-transparent hover-bg-blue hover-white w-100" 
 					        	type="password" 
 					        	name="password"  
 					        	id="password" 
