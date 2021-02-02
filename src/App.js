@@ -76,11 +76,24 @@ class App extends React.Component {
         // to:
         // .predict('c0c0ac362b03416da06ab3fa36fb58e3', this.state.input)
 
-  onButtonSubmit = () => {
+  onPictureSumit = () => {
     console.log('click');
     this.setState({imageUrl: this.state.input})
      app.models.predict(Clarifai.FACE_DETECT_MODEL,this.state.input)
-      .then (response => this.displayFaceBox(this.calculateFaceLocation(response)))    
+      .then (response => {
+        if (response) {
+          fetch('http://localhost:3000/image', {
+          method: 'put',
+          headers: {'Content-type': 'application/json'},
+          body: JSON.stringify({
+            id: this.state.user.id
+            })
+          }).then(response => response.json())
+            .then(entryID => {
+              this.setState(Object.assign(this.state.user, { entries: entryID})) // this will only change the entries parameter, otherwis with this.state.user.entris change would change whole object data - it would reset all other attributes to zero
+            })
+        }
+       this.displayFaceBox(this.calculateFaceLocation(response))})    
       .catch (error => console.log(error))    
   }
 
@@ -103,7 +116,7 @@ class App extends React.Component {
               <Rank name={this.state.user.name} entries={this.state.user.entries}/>
               <ImageLinkForm 
                 onInputChange={this.onInputChange} 
-                onButtonSubmit={this.onButtonSubmit}/>
+                onPictureSumit={this.onPictureSumit}/>
               <FaceRecognition box={box} imageUrl={imageUrl} />
             </div>          
           : (route === 'signin' 
