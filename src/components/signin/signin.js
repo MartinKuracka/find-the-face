@@ -19,7 +19,7 @@ class SignIn extends React.Component {
 		this.setState({signInPassword: event.target.value})
 	}
 
-	onSubmitSignIn = () => {
+	onSubmitSignIn = (props) => {
 		fetch('http://localhost:3000/signin', {
 			method: 'post',
 			headers: {'Content-type': 'application/json'},
@@ -27,10 +27,11 @@ class SignIn extends React.Component {
 				email: this.state.signInEmail,
 				password: this.state.signInPassword
 			})
-		}) .then(response => response.json())
-				.then(data => {
-					if (data === 'success') {
-						this.props.onRouteChange('home')
+		}).then(response => response.json())
+				.then(user => {
+					if (user.email === this.state.signInEmail) {
+						this.props.loadUser(user)
+						this.props.onRouteChange('home') 
 					}
 				})
 	}
@@ -41,8 +42,7 @@ class SignIn extends React.Component {
 	}
  
 	render() {
-		const { onRouteChange } = this.props;
-	  return (
+		return (
 	    <div className='center ma mt3-l'>
 	    	<article className=" w-30 w-50-m center br3 pa3 pa3-ns mv2 ba shadow-2">
 		   		<main className="pa4 black-80">
