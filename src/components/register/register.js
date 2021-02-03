@@ -23,10 +23,7 @@ class Register extends React.Component {
 	}
 
 	onSubmitRegister = () => {
-		this.props.onRouteChange('home')
-		console.log(this.state.name)
-		console.log(this.state.email)
-		console.log(this.state.password)
+		if (this.state.name !== '' && this.state.email !== '' && this.state.password !== '') {
 		fetch('http://localhost:3000/register', {
 			method: 'post',
 			headers: {'Content-type': 'application/json'},
@@ -39,12 +36,15 @@ class Register extends React.Component {
 				.then(response => response.json())
 				.then(user => {
 					if (user) {
+						console.log(user)
 						this.props.loadUser(user)
 						this.props.onRouteChange('home')
 					}
 				})
+		} else {
+			alert('All fields must be filled')
+		}
 	}
-
 
 	render() {
 	  return (
