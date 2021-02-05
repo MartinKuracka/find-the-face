@@ -1,7 +1,5 @@
 import React from 'react';
 
-// {imageUrl, box, onRouteChange} just in case I need it
-
 class SignIn extends React.Component {
 	constructor(props) {
 		super(props);

@@ -13,10 +13,7 @@ import Clarifai from "clarifai";
 
 let app = new Clarifai.App({apiKey: '0d1a8485d84b452cb18e6d822cfc78e2'});
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
+const initialState = {
       input: '',
       imageUrl: '',
       box: {},
@@ -30,7 +27,12 @@ class App extends React.Component {
         entries: 0,
         joined: '' 
       }
-    }
+}
+
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = initialState
   };
 
   loadUser = (data) => {
@@ -67,17 +69,13 @@ class App extends React.Component {
   }
 
   onRouteChange = (route) => {
+    if (route === 'signout' || route === 'signin') {
+      this.setState(initialState)
+    }
     this.setState({route: route})
   }
 
-
-        //  you would change from:
-        // .predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
-        // to:
-        // .predict('c0c0ac362b03416da06ab3fa36fb58e3', this.state.input)
-
   onPictureSumit = () => {
-    console.log('click');
     this.setState({imageUrl: this.state.input})
      app.models.predict(Clarifai.FACE_DETECT_MODEL,this.state.input)
       .then (response => {
@@ -90,17 +88,12 @@ class App extends React.Component {
             })
           }).then(response => response.json())
             .then(entryID => {
-              this.setState(Object.assign(this.state.user, { entries: entryID})) // this will only change the entries parameter, otherwis with this.state.user.entris change would change whole object data - it would reset all other attributes to zero
+              this.setState(Object.assign(this.state.user, { entries: entryID}))
             })
         }
        this.displayFaceBox(this.calculateFaceLocation(response))})    
       .catch (error => console.log(error))    
   }
-
-  // onLoginOut = () => {
-  //   console.log('logging Out')
-  //   this.setState({route: 'signin'})
-  // };
 
   render() { 
     const {box, imageUrl, route} = this.state; // this is to get rid of the this.state in whole render statement for cleaner code for parameters in the {}.

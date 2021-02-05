@@ -39,7 +39,7 @@ class Register extends React.Component {
 						console.log(user)
 						this.props.loadUser(user)
 						this.props.onRouteChange('home')
-					} else if (user = 'unable to register' ) {
+					} else if (user = 'unable to register, user already exists' ) {
 						console.log('user exist')
 					}
 				})
