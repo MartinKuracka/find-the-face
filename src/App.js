@@ -61,7 +61,6 @@ class App extends React.Component {
 
   displayFaceBox = (box) => {
     this.setState({box: box});
-    console.log(box);
   }
 
   onInputChange = (event) => {

@@ -23,11 +23,7 @@ class Register extends React.Component {
 	}
 
 	onSubmitRegister = () => {
-		console.log(this.state.name)
-		console.log(this.state.email)
-		console.log(this.state.password)
 		const ValidateEmail = (mail) => {			 
-			 console.log(this.state.email)
 			 if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(this.state.email))
 			  {
 			    return (true)
@@ -35,7 +31,7 @@ class Register extends React.Component {
 			    alert("You have entered an invalid email address!")			           
 		}
 		const ValidatePassword = (pass) => {
-			if (this.state.password.lenght > 6) {
+			if (this.state.password.length > 6) {
 				return (true)
 			} alert('Password must be longer than 6 characters')			 
 		}
@@ -53,11 +49,10 @@ class Register extends React.Component {
 					.then(response => response.json())
 					.then(user => {
 						if (user !== 'unable to register') {
-							console.log(user)
 							this.props.loadUser(user)
 							this.props.onRouteChange('home')
 						} else {
-							console.log('user exist')
+							alert('This user email is already registered')
 						}
 					})
 			}
