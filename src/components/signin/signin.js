@@ -36,7 +36,6 @@ class SignIn extends React.Component {
 
 	onRegisterPress = () => {
 		this.props.onRouteChange('register')
-		console.log('onRegisterPress activated')
 	}
  
 	render() {

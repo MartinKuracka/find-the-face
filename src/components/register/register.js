@@ -23,26 +23,38 @@ class Register extends React.Component {
 	}
 
 	onSubmitRegister = () => {
-		if (this.state.name !== '' && this.state.email !== '' && this.state.password !== '') {
-		fetch('http://localhost:3000/register', {
-			method: 'post',
-			headers: {'Content-type': 'application/json'},
-			body: JSON.stringify({
-				name: this.state.name,
-				email: this.state.email,
-				password: this.state.password
-			})
-		}) 
-				.then(response => response.json())
-				.then(user => {
-					if (user !== 'unable to register') {
-						console.log(user)
-						this.props.loadUser(user)
-						this.props.onRouteChange('home')
-					} else if (user = 'unable to register, user already exists' ) {
-						console.log('user exist')
-					}
-				})
+		console.log(this.state.name)
+		console.log(this.state.email)
+		const ValidateEmail = (mail) => {			 
+			 console.log(this.state.email)
+			 if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(this.state.email))
+			  {
+			    return (true)
+			  }
+			    alert("You have entered an invalid email address!")			           
+		}
+		if (this.state.name !== '' && this.state.email !== '' && this.state.password !== ''){
+			if (ValidateEmail(true)) {
+				fetch('http://localhost:3000/register', {
+					method: 'post',
+					headers: {'Content-type': 'application/json'},
+					body: JSON.stringify({
+						name: this.state.name,
+						email: this.state.email,
+						password: this.state.password
+					})
+				}) 
+					.then(response => response.json())
+					.then(user => {
+						if (user !== 'unable to register') {
+							console.log(user)
+							this.props.loadUser(user)
+							this.props.onRouteChange('home')
+						} else {
+							console.log('user exist')
+						}
+					})
+			}
 		} else {
 			alert('All fields must be filled')
 		}
