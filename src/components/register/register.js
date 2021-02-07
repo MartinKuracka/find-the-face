@@ -22,13 +22,14 @@ class Register extends React.Component {
 		this.setState({password: event.target.value})		
 	}
 
-	onSubmitRegister = () => {
+	onSubmitRegister = (props) => {
 		const ValidateEmail = (mail) => {			 
 			 if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(this.state.email))
 			  {
-			    return (true)
+			  	return (true)
 			  }
-			    alert("You have entered an invalid email address!")			           
+			  	this.props.state.popup('invalid email')
+			  	alert("You have entered an invalid email address!")			           
 		}
 		const ValidatePassword = (pass) => {
 			if (this.state.password.length > 6) {
