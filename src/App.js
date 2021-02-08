@@ -9,9 +9,7 @@ import ImageLinkForm from './components/ImageLinkForm/imageLinkForm';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import ParticleParameters from './components/particles';
 import Particles from 'react-particles-js';
-import Clarifai from "clarifai";
-
-let app = new Clarifai.App({apiKey: '0d1a8485d84b452cb18e6d822cfc78e2'});
+import Popup from './components/popup/popup';
 
 const initialState = {
       input: '',
@@ -75,21 +73,28 @@ class App extends React.Component {
   }
 
   onPictureSumit = () => {
-    this.setState({imageUrl: this.state.input})
-     app.models.predict(Clarifai.FACE_DETECT_MODEL,this.state.input)
-      .then (response => {
-        if (response) {
-          fetch('http://localhost:3000/image', {
-          method: 'put',
+    this.setState({imageUrl: this.state.input});
+      fetch('http://localhost:3000/imageurl', {
+          method: 'post',
           headers: {'Content-type': 'application/json'},
           body: JSON.stringify({
-            id: this.state.user.id
-            })
-          }).then(response => response.json())
-            .then(entryID => {
-              this.setState(Object.assign(this.state.user, { entries: entryID}))
-            })
-        }
+          input: this.state.input
+          })
+      })
+        .then(response => response.json())
+        .then (response => {
+          if (response) {
+            fetch('http://localhost:3000/image', {
+            method: 'put',
+            headers: {'Content-type': 'application/json'},
+            body: JSON.stringify({
+              id: this.state.user.id
+              })
+            }).then(response => response.json())
+              .then(entryID => {
+                this.setState(Object.assign(this.state.user, { entries: entryID}))
+              })
+          }
        this.displayFaceBox(this.calculateFaceLocation(response))})    
       .catch (error => console.log(error))    
   }

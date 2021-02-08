@@ -28,7 +28,6 @@ class Register extends React.Component {
 			  {
 			  	return (true)
 			  }
-			  	this.props.state.popup('invalid email')
 			  	alert("You have entered an invalid email address!")			           
 		}
 		const ValidatePassword = (pass) => {
@@ -64,61 +63,64 @@ class Register extends React.Component {
 
 	render() {
 	  return (
-	    <div className='center ma mt3-l'>
-	    	<article className=" w-30 w-50-m center br3 pa3 pa3-ns mv2 ba shadow-2">
-		   		<main className="pa4 black-80">
-					  <div className="measure">
-					    <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-					      <legend className="f2 fw6 ph0 mh0">Register</legend>
-					       <div className="mt3">
-					        <label className="db fw6 lh-copy f6" htmlFor="name">Name</label>
-					        <input 
-					        	className="pa2 br2 input-reset bg-transparent hover-bg-blue hover-white w-100" 
-					        	type="text" 
-					        	name="name"  
-					        	id="name" 
-					        	onChange={this.onNameChange}
-					        />
-					      </div>
-					      <div className="mt3">
-					        <label className="db bafw6 lh-copy f6" htmlFor="email-address">Email</label>
-					        <input 
-					        	className="pa2 br2 input-reset bg-transparent hover-bg-blue hover-white w-100" 
-					        	type="email" 
-					        	name="email-address"  
-					        	id="email-address" 
-					        	onChange={this.onEmailChange}
-					        />
-					      </div>
-					      <div className="mv3">
-					        <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
-					        <input 
-					        	className="b pa2 br2 input-reset bg-transparent hover-bg-blue hover-white w-100" 
-					        	type="password" 
-					        	name="password"  
-					        	id="password" 
-					        	onChange={this.onPasswordChange}
-					        />
-					      </div>				      
-					    </fieldset>
-					    <div className='center w-100'>
-						    <div className="center">
-						      <input 				      	
-						      	onClick={() => this.props.onRouteChange('signin')} className="pa3 pv2 input-reset br2 ba b--black bg-transparent bg-dark-blue white grow pointer f5 dib" 
-						      	type="submit" 
-						      	value="Sign In" />
-						    </div>		
-						    <div className="center">
-						      <input 				      	
-						      	onClick={this.onSubmitRegister} className="pa3 pv2 input-reset ba b--black br2 bg-transparent bg-dark-blue white grow pointer f5 dib"
-						      	type="submit" 
-						      	value="Register" />
-						    </div>	
-						  </div>			   
-						</div>
-					</main>
-				</article>
-	    </div>
+	  	<div>
+		  	 <div className='center ma mt3-l'>
+			    	<article className=" w-30 w-50-m center br3 pa3 pa3-ns mv2 ba shadow-2">
+				   		<main className="pa4 black-80">
+							  <div className="measure">
+							    <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
+							      <legend className="f2 fw6 ph0 mh0">Register</legend>
+							       <div className="mt3">
+							        <label className="db fw6 lh-copy f6" htmlFor="name">Name</label>
+							        <input 
+							        	className="pa2 br2 input-reset bg-transparent hover-bg-blue hover-white w-100" 
+							        	type="text" 
+							        	name="name"  
+							        	id="name" 
+							        	onChange={this.onNameChange}
+							        />
+							      </div>
+							      <div className="mt3">
+							        <label className="db bafw6 lh-copy f6" htmlFor="email-address">Email</label>
+							        <input 
+							        	className="pa2 br2 input-reset bg-transparent hover-bg-blue hover-white w-100" 
+							        	type="email" 
+							        	name="email-address"  
+							        	id="email-address" 
+							        	onChange={this.onEmailChange}
+							        />
+							      </div>
+							      <div className="mv3">
+							        <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
+							        <input 
+							        	className="b pa2 br2 input-reset bg-transparent hover-bg-blue hover-white w-100" 
+							        	type="password" 
+							        	name="password"  
+							        	id="password" 
+							        	onChange={this.onPasswordChange}
+							        />
+							      </div>				      
+							    </fieldset>
+							    <div className='center w-100'>
+								    <div className="center">
+								      <input 				      	
+								      	onClick={() => this.props.onRouteChange('signin')} className="pa3 pv2 input-reset br2 ba b--black bg-transparent bg-dark-blue white grow pointer f5 dib" 
+								      	type="submit" 
+								      	value="Sign In" />
+								    </div>		
+								    <div className="center">
+								      <input 				      	
+								      	onClick={this.onSubmitRegister} className="pa3 pv2 input-reset ba b--black br2 bg-transparent bg-dark-blue white grow pointer f5 dib"
+								      	type="submit" 
+								      	value="Register" />
+								    </div>	
+								  </div>			   
+								</div>
+							</main>
+						</article>
+			   		</div>
+		  	}	
+	  	</div>
 	  );
 	}
 }
