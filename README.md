@@ -3,6 +3,7 @@
 This project was created as a sample to show different posibilities of Web Apps.
 User has to create account in order to be able to use the app. 
 Firstly it was built and tested locally and then it was deployed to Heroku as an sample project App.
+I have found out thet initial loading of user information after login can sometimes take several seconds due to starting of the server.
 
 
 ## After logging IN
