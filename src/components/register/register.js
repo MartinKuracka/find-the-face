@@ -37,7 +37,7 @@ class Register extends React.Component {
 		}
 		if (this.state.name !== '' && this.state.email !== '' && this.state.password !== ''){
 			if (ValidateEmail(true) && ValidatePassword(true)) {
-				fetch('http://localhost:3000/register', {
+				fetch('https://desolate-harbor-55159.herokuapp.com/register', {
 					method: 'post',
 					headers: {'Content-type': 'application/json'},
 					body: JSON.stringify({
@@ -118,8 +118,7 @@ class Register extends React.Component {
 								</div>
 							</main>
 						</article>
-			   		</div>
-		  	}	
+			   	</div>		  	
 	  	</div>
 	  );
 	}
