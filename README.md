@@ -19,7 +19,7 @@ For face detection I have used the Clarifai API that is free to use, but ocassio
 
 Back-End:
 
-Server was built using ExpressJS and NodeJS, for communication is used JSON.
+Server was built using ExpressJS and NodeJS, for communication is used JSON and the database is PostgeSQL.
 Passwords are saved encrypted using BCRYPT library, querries to the server are done by using KNEX.
 Server as well as DB was deployed on HEROKU.
 
