@@ -13,7 +13,7 @@ The App will show users name and the number of pictures he has submitted.
 
 Front-End:
 
-This App was built using ReactJS, NodeJs and ExpressJs
+This App was built using ReactJS, NodeJS and ExpressJS
 
 For face detection I have used the Clarifai API that is free to use, but ocassionally can be down due to constant updates. If the App is not working try again later as this might be the case. 
 
