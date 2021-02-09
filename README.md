@@ -21,6 +21,6 @@ Back-End:
 
 Server was built using ExpressJS and NodeJS, for communication is used JSON and the database is PostgeSQL.
 Passwords are saved encrypted using BCRYPT library, querries to the server are done by using KNEX.
-Server as well as DB was deployed on HEROKU.
+Server as well as DB is deployed on HEROKU.
 
 Feel free to try the App or explore the code. Any suggestions or comments are welcome. 
