@@ -5,7 +5,7 @@ User has to create account in order to be able to use the app.
 Firstly it was built and tested locally and then it was deployed to Heroku as an sample project App.
 
 
-## After loging IN
+## After logging IN
 
 The App will show users name and the number of pictures he has submitted.
 
