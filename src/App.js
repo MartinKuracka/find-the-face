@@ -107,24 +107,22 @@ class App extends React.Component {
         <Particles className='particles' params={ParticleParameters}/>
         <Header className='header' />
         { route === 'home'  // condition - if the route state is 'signin', will show sign in form. If the state of route is different, will show the rest after :. ? is for IF and : is for ELSE
-          ? <div>
-              <div className='spread pa2'>
-                <Logo/>
-                <Navigation onRouteChange={this.onRouteChange}/>        
+          ? <div className=''>
+              <Navigation className='spread pa2' onRouteChange={this.onRouteChange}/> 
+              <div className='home-box grid-cont br3 ba w-70 center'>
+                 <Rank className='rank-grid' name={this.state.user.name} entries={this.state.user.entries}/>
+                 <ImageLinkForm 
+                    onInputChange={this.onInputChange} 
+                    onPictureSumit={this.onPictureSumit}/>
+                 <FaceRecognition box={box} imageUrl={imageUrl} />       
               </div>
-              <Rank name={this.state.user.name} entries={this.state.user.entries}/>
-              <ImageLinkForm 
-                onInputChange={this.onInputChange} 
-                onPictureSumit={this.onPictureSumit}/>
-              <FaceRecognition box={box} imageUrl={imageUrl} />
+             
             </div>          
           : (route === 'signin' 
-            ? <div>
-                <Logo />
-                <SignIn onRouteChange={this.onRouteChange} loadUser={this.loadUser}/>
+            ? <div>               
+                <SignIn className='signin' onRouteChange={this.onRouteChange} loadUser={this.loadUser}/>
               </div>
             : <div>
-                <Logo />
                 <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
               </div>
             )

@@ -1,5 +1,6 @@
 import React from 'react';
 import Popup from '../popup/popup'
+import './signin.css';
 
 class SignIn extends React.Component {
 	constructor(props) {
@@ -43,8 +44,8 @@ class SignIn extends React.Component {
  
 	render() {
 		return (
-			<div className='center ma mt3-l'>
-				<article className=" w-30 w-50-m center br3 pa3 pa3-ns mv2 ba shadow-2">
+			<div className='center  ma mt3-l'>
+				<article className="signin w-30 w-40-m center br3 pa3 pa3-ns ba shadow-2">
 		   		<main className="pa4 black-80">
 					  <div className="measure">
 					    <fieldset id="sign_up" className="ba b--transparent ph0 mh0">

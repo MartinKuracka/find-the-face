@@ -4,10 +4,7 @@ import './imagelinkform.css';
 const ImageLinkForm = ({onInputChange, onPictureSumit}) => {
 	return (
 	  <div className=''>
-		<p className='f3'>
-		  {'This magic App will find faces in Your pictures'}
-		</p>
-		<div className='center'>
+		<div className='tc center'>
 			<div className='form center pa4 br3 shadow-3'>
 			  <input className='f4 pa2 w-70 center' type='text' placeholder='Find The Face' 
 			  			 onChange={onInputChange}/>

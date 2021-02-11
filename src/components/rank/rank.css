@@ -1,0 +1,16 @@
+.container {
+	display: flex;
+	flex-direction: column;
+}
+
+.rank-grid {
+  grid-column-start: 3;
+  grid-row-start: 1;
+  background-color: yellow;
+}
+
+.rank-number {
+  grid-column-start: ;
+  grid-row-start: 2;
+  background-color: red;
+}

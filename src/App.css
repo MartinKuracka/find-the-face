@@ -1,6 +1,6 @@
-.App {
+/*.App {
   text-align: center;
-}
+}*/
 
 .center {
   display:flex;
@@ -9,7 +9,7 @@
 
 .spread {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .particles {
@@ -31,3 +31,24 @@
   transform: skewY(-10deg);
   box-shadow: 15px 15px 15px 10px #212121;
 }
+
+.home-box{
+/*  width: 800px;*/
+  min-width: 800px;
+  display: grid;
+  background-color: white;
+  box-shadow: 10px 10px 10px 10px black;
+  min-height: 600px;
+}
+
+.grid-cont {
+  grid-template-columns: 10% 40% 40% 10%;
+  grid-template-rows: 25% 25% 40% auto;
+}
+
+.rank-grid {
+  grid-column-start: 3;
+  grid-row-start: 1;
+  background-color: yellow;
+}
+
