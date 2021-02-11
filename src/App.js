@@ -4,6 +4,8 @@ import Navigation from './components/navigation/navigation';
 import Logo from './components/logo/logo';
 import Header from './components/header/header';
 import Rank from './components/rank/rank';
+import InfoBox from './components/rank/infobox';
+import NoRank from './components/rank/numberank';
 import SignIn from './components/signin/signin';
 import Register from './components/register/register';
 import ImageLinkForm from './components/ImageLinkForm/imageLinkForm';
@@ -109,12 +111,14 @@ class App extends React.Component {
         { route === 'home'  // condition - if the route state is 'signin', will show sign in form. If the state of route is different, will show the rest after :. ? is for IF and : is for ELSE
           ? <div className=''>
               <Navigation className='spread pa2' onRouteChange={this.onRouteChange}/> 
-              <div className='home-box grid-cont br3 ba w-70 center'>
-                 <Rank className='rank-grid' name={this.state.user.name} entries={this.state.user.entries}/>
+              <div className='cont-grid br3 ba w-70 center'>
+                 <InfoBox />
+                 <Rank className='item-a' name={this.state.user.name}/>
+                 <NoRank entries={this.state.user.entries}/>
                  <ImageLinkForm 
                     onInputChange={this.onInputChange} 
                     onPictureSumit={this.onPictureSumit}/>
-                 <FaceRecognition box={box} imageUrl={imageUrl} />       
+                 <FaceRecognition className='item-e' box={box} imageUrl={imageUrl} />       
               </div>
              
             </div>          

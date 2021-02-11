@@ -3,7 +3,7 @@ import './rank.css';
 
 const NoRank = ({entries}) => {
 		return (
-			<div className='rank-number tc f1'>
+			<div className='item-c tc f1 mt4'>
 				{entries}
 			</div>
 		)
