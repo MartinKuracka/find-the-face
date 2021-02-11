@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Navigation from './components/navigation/navigation';
 import Logo from './components/logo/logo';
+import Header from './components/header/header';
 import Rank from './components/rank/rank';
 import SignIn from './components/signin/signin';
 import Register from './components/register/register';
@@ -104,6 +105,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Particles className='particles' params={ParticleParameters}/>
+        <Header className='header' />
         { route === 'home'  // condition - if the route state is 'signin', will show sign in form. If the state of route is different, will show the rest after :. ? is for IF and : is for ELSE
           ? <div>
               <div className='spread pa2'>

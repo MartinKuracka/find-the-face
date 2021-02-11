@@ -1,0 +1,7 @@
+.skew-back {
+  transform: skewY(10deg);
+}
+
+.header-text {
+	margin-top: 250px;
+}
