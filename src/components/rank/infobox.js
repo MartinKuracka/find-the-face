@@ -3,9 +3,9 @@ import React from 'react';
 
 const InfoBox = () => {
 	return (
-	  <div className='item-a f5 mt4'>
-		<h3 className='fw1-l'>
-			Find links to face images ending with <span className='dark-green'>.jpg</span> or <span className='dark-green'>.png </span>and click 'Detect'
+	  <div className='item-c f5 mt4'>
+		<h3 className='fw1 f5'>
+			Find links to face images and click <span className='dark-green'>'Detect'</span>
 		</h3>
 	  </div>
 	);

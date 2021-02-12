@@ -1,13 +1,14 @@
 import React from 'react';
 // import './rank.css';
-import NoRank from './numberank';
+
 
 const Rank = ({name}) => {
+	name = name.toUpperCase();
 	return (
-	  <div className='item-b f5 mt4'>
+	  <div className='item-a f5 mt4'>
 		<div className='fw1-l'>
-			<span className='f3'>Hi {name},</span>
-			<br/>
+			<span className='f2 fw7'>Hi {name},</span>
+			<br/><br/>
 				{'your current entry count is ...'}
 			</div>			
       </div>  

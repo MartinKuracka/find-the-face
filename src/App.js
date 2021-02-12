@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import Navigation from './components/navigation/navigation';
-import Logo from './components/logo/logo';
 import Header from './components/header/header';
 import Rank from './components/rank/rank';
 import InfoBox from './components/rank/infobox';
@@ -12,7 +11,6 @@ import ImageLinkForm from './components/ImageLinkForm/imageLinkForm';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import ParticleParameters from './components/particles';
 import Particles from 'react-particles-js';
-import Popup from './components/popup/popup';
 
 const initialState = {
       input: '',
@@ -105,13 +103,13 @@ class App extends React.Component {
   render() { 
     const {box, imageUrl, route} = this.state; // this is to get rid of the this.state in whole render statement for cleaner code for parameters in the {}.
     return (
-      <div className="App">
+      <div className="">
         <Particles className='particles' params={ParticleParameters}/>
         <Header className='header' />
         { route === 'home'  // condition - if the route state is 'signin', will show sign in form. If the state of route is different, will show the rest after :. ? is for IF and : is for ELSE
           ? <div className=''>
               <Navigation className='spread pa2' onRouteChange={this.onRouteChange}/> 
-              <div className='cont-grid br3 ba w-70 center'>
+              <div className='cont-grid ba w-70 ml-auto'>
                  <InfoBox />
                  <Rank className='item-a' name={this.state.user.name}/>
                  <NoRank entries={this.state.user.entries}/>
@@ -124,7 +122,7 @@ class App extends React.Component {
             </div>          
           : (route === 'signin' 
             ? <div>               
-                <SignIn className='signin' onRouteChange={this.onRouteChange} loadUser={this.loadUser}/>
+                <SignIn className='' onRouteChange={this.onRouteChange} loadUser={this.loadUser}/>
               </div>
             : <div>
                 <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>

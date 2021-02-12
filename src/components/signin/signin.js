@@ -1,5 +1,4 @@
 import React from 'react';
-import Popup from '../popup/popup'
 import './signin.css';
 
 class SignIn extends React.Component {
