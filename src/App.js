@@ -112,7 +112,7 @@ class App extends React.Component {
               <div className='cont-grid ba w-70 ml-auto'>
                  <InfoBox />
                  <Rank className='item-a' name={this.state.user.name}/>
-                 <NoRank entries={this.state.user.entries}/>
+                 <NoRank className='' entries={this.state.user.entries}/>
                  <ImageLinkForm 
                     onInputChange={this.onInputChange} 
                     onPictureSumit={this.onPictureSumit}/>

@@ -3,7 +3,7 @@ import React from 'react';
 
 const NoRank = ({entries}) => {
 		return (
-			<div className='item-b br2 pt3 tc f1 ma4'>
+			<div className='item-b br4 pt5 pb mb5 tc ma5 mt4 mr0'>
 				{entries}
 			</div>
 		)

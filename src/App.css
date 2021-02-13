@@ -40,7 +40,7 @@
   min-width: 800px;
   max-width: 80vw;
   display: grid;
-  background-color: white;
+  background: linear-gradient(180deg, rgba(6,74,18,1) 0%, rgba(63,134,89,1) 49%, rgba(119,217,203,1) 100%);
   box-shadow: 10px 10px 10px 10px black;
   min-height: 600px;
   grid-template-columns: 5% 20% 20% 55%;
@@ -56,14 +56,14 @@
 }
 
 .item-b {
+  font-size: 70px;
+  font-family: sans-serif;
+  font-weight: 800;
   display: grid;
   grid-column-start: 3;  
   grid-row-start: 1;
-  background: rgb(60,110,67);
-background: -moz-linear-gradient(30deg, rgba(60,110,67,1) 0%, rgba(197,232,210,1) 49%, rgba(179,233,180,1) 100%);
-background: -webkit-linear-gradient(30deg, rgba(60,110,67,1) 0%, rgba(197,232,210,1) 49%, rgba(179,233,180,1) 100%);
-background: linear-gradient(30deg, rgba(60,110,67,1) 0%, rgba(197,232,210,1) 49%, rgba(179,233,180,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3c6e43",endColorstr="#b3e9b4",GradientType=1);
+  grid-row-end: 3;
+  background-color: white;
 }
 
 .item-c {
