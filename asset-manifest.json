@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/find-the-face/static/css/main.1ef7334a.chunk.css",
+    "main.js": "/find-the-face/static/js/main.6c97e296.chunk.js",
+    "main.js.map": "/find-the-face/static/js/main.6c97e296.chunk.js.map",
+    "runtime-main.js": "/find-the-face/static/js/runtime-main.bd2ab995.js",
+    "runtime-main.js.map": "/find-the-face/static/js/runtime-main.bd2ab995.js.map",
+    "static/css/2.31461e4f.chunk.css": "/find-the-face/static/css/2.31461e4f.chunk.css",
+    "static/js/2.a0d73f27.chunk.js": "/find-the-face/static/js/2.a0d73f27.chunk.js",
+    "static/js/2.a0d73f27.chunk.js.map": "/find-the-face/static/js/2.a0d73f27.chunk.js.map",
+    "index.html": "/find-the-face/index.html",
+    "static/css/2.31461e4f.chunk.css.map": "/find-the-face/static/css/2.31461e4f.chunk.css.map",
+    "static/css/main.1ef7334a.chunk.css.map": "/find-the-face/static/css/main.1ef7334a.chunk.css.map",
+    "static/js/2.a0d73f27.chunk.js.LICENSE.txt": "/find-the-face/static/js/2.a0d73f27.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/find-the-face/static/media/bckg2.0952788a.jpg",
+    "static/media/hdrimg.b5576fbf.png": "/find-the-face/static/media/hdrimg.b5576fbf.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bd2ab995.js",
+    "static/css/2.31461e4f.chunk.css",
+    "static/js/2.a0d73f27.chunk.js",
+    "static/css/main.1ef7334a.chunk.css",
+    "static/js/main.6c97e296.chunk.js"
+  ]
+}
