@@ -6,7 +6,7 @@ class Popup extends React.Component {
 		super(props);
 		this.state = {
 			togglepopup: '',
-			popupmessage: 'loading'
+			popupmessage: 'loading...'
 		}
 	}
 
@@ -17,7 +17,7 @@ class Popup extends React.Component {
 
 	render () {
 		return (
-			<div className='popup-box center w-30 br3 mt5' onClick={this.tooglepopup} >
+			<div className='popup-box center w-20 br3 mt5 b--green b--solid' onClick={this.tooglepopup} >
 				{ 
 					<h1>
 						{this.state.popupmessage}

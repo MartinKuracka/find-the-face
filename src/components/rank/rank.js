@@ -10,7 +10,7 @@ const Rank = ({name}) => {
 			<div className='animatename'>
 				<span className='animatename f2 fw7'>Hi {name},</span>
 			</div>
-			<br/><br/>
+			<br/>
 				{'your current entry count is'}
 			</div>			
       </div>  

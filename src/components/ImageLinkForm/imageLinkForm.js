@@ -8,7 +8,7 @@ const ImageLinkForm = ({onInputChange, onPictureSumit}) => {
 			<div className='items-baseline form center pa4 br3 shadow-3'>
 			  <input className='f5 pa2 w-70 center' type='text' placeholder='Find The Face' 
 			  			 onChange={onInputChange}/>
-			  <button className='w-30 grow f5 link ph3 pv2 dib white bg-light-purple'
+			  <button className='w-30 grow f5 link ph3 pv2 dib white bg-blue'
 			  				onClick={onPictureSumit}>
 			  				Detect
 			  </button>
