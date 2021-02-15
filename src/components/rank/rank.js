@@ -1,5 +1,5 @@
 import React from 'react';
-// import './rank.css';
+import './rank.css';
 
 
 const Rank = ({name}) => {
@@ -7,7 +7,9 @@ const Rank = ({name}) => {
 	return (
 	  <div className='item-a f4 mt4'>
 		<div className='white fw1-l'>
-			<span className='f2 fw7'>Hi {name},</span>
+			<div className='animatename'>
+				<span className='animatename f2 fw7'>Hi {name},</span>
+			</div>
 			<br/><br/>
 				{'your current entry count is'}
 			</div>			
