@@ -1,25 +1,26 @@
 {
   "files": {
-    "main.css": "/find-the-face/static/css/main.1ef7334a.chunk.css",
-    "main.js": "/find-the-face/static/js/main.6c97e296.chunk.js",
-    "main.js.map": "/find-the-face/static/js/main.6c97e296.chunk.js.map",
+    "main.css": "/find-the-face/static/css/main.83ce1477.chunk.css",
+    "main.js": "/find-the-face/static/js/main.436e730f.chunk.js",
+    "main.js.map": "/find-the-face/static/js/main.436e730f.chunk.js.map",
     "runtime-main.js": "/find-the-face/static/js/runtime-main.bd2ab995.js",
     "runtime-main.js.map": "/find-the-face/static/js/runtime-main.bd2ab995.js.map",
     "static/css/2.31461e4f.chunk.css": "/find-the-face/static/css/2.31461e4f.chunk.css",
-    "static/js/2.a0d73f27.chunk.js": "/find-the-face/static/js/2.a0d73f27.chunk.js",
-    "static/js/2.a0d73f27.chunk.js.map": "/find-the-face/static/js/2.a0d73f27.chunk.js.map",
+    "static/js/2.6598d626.chunk.js": "/find-the-face/static/js/2.6598d626.chunk.js",
+    "static/js/2.6598d626.chunk.js.map": "/find-the-face/static/js/2.6598d626.chunk.js.map",
     "index.html": "/find-the-face/index.html",
     "static/css/2.31461e4f.chunk.css.map": "/find-the-face/static/css/2.31461e4f.chunk.css.map",
-    "static/css/main.1ef7334a.chunk.css.map": "/find-the-face/static/css/main.1ef7334a.chunk.css.map",
-    "static/js/2.a0d73f27.chunk.js.LICENSE.txt": "/find-the-face/static/js/2.a0d73f27.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/find-the-face/static/media/bckg2.0952788a.jpg",
-    "static/media/hdrimg.b5576fbf.png": "/find-the-face/static/media/hdrimg.b5576fbf.png"
+    "static/css/main.83ce1477.chunk.css.map": "/find-the-face/static/css/main.83ce1477.chunk.css.map",
+    "static/js/2.6598d626.chunk.js.LICENSE.txt": "/find-the-face/static/js/2.6598d626.chunk.js.LICENSE.txt",
+    "static/media/face.5ae0a412.png": "/find-the-face/static/media/face.5ae0a412.png",
+    "static/media/hdrimg.b5576fbf.png": "/find-the-face/static/media/hdrimg.b5576fbf.png",
+    "static/media/App.css": "/find-the-face/static/media/sample.bc87dddb.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.bd2ab995.js",
     "static/css/2.31461e4f.chunk.css",
-    "static/js/2.a0d73f27.chunk.js",
-    "static/css/main.1ef7334a.chunk.css",
-    "static/js/main.6c97e296.chunk.js"
+    "static/js/2.6598d626.chunk.js",
+    "static/css/main.83ce1477.chunk.css",
+    "static/js/main.436e730f.chunk.js"
   ]
 }
