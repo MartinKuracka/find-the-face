@@ -21,8 +21,7 @@ class SignIn extends React.Component {
 		this.setState({signInPassword: event.target.value})
 	}
 
-	dataFetching = (props) => {
-			console.log('toggleModal after feth is ',this.state.popupstate)
+	dataFetching = (props) => {			
 			fetch('https://desolate-harbor-55159.herokuapp.com/signin', {
 			method: 'post',
 			headers: {'Content-type': 'application/json'},
@@ -30,7 +29,11 @@ class SignIn extends React.Component {
 				email: this.state.signInEmail,
 				password: this.state.signInPassword
 			})
-		}).then(response => response.json()).then(console.log('data fetched'))
+		}).then(response => response.json())
+			.catch(() => {
+				this.changemessage('Could not fetch data')
+				this.setState({popupstate:true})
+			})
 				.then(user => {
 					if (user.email === this.state.signInEmail) {
 						this.props.loadUser(user)
@@ -38,26 +41,15 @@ class SignIn extends React.Component {
 					} else {
 						return (
 							this.setState({popupmessage: 'wrong credentials'}),
-							console.log('message from return', this.popupmessage),
-							// alert('wrong credentials')
+							console.log('message from return', this.popupmessage),						
 							this.changemessage('wrong credentials')
-							// this.setState({popupstate: false})
 						)
-
-					}
-						
-				})
-			
+					}						
+				})							
 	}
 
-	// progressIndicator = () => {
-	// 	console.log('triggered')
-	// 	this.toggleModal()
-	// }
-
-	togglePopup = (value) => {
+	togglePop = () => {
     this.setState({popupstate: !this.state.popupstate});
-    console.log('popupstate is ',this.state.popupstate)
   }
 
   changemessage = (message) => {
@@ -80,10 +72,11 @@ class SignIn extends React.Component {
 	render() {
 		return (
 			<div>
-				{this.state.popupstate
-					? <Popup popupmessage={this.state.popupmessage} togglePopup={this.togglePopup} changemessage={this.changemessage} />
-					: <div className='center  ma mt3-l'>
-										<article className="signin w-30 w-40-m center br3 pa3 pa3-ns ba shadow-2">
+				<div className='center mt4'>		
+					 {this.state.popupstate ? <Popup className='center w-100 flex' toggle={this.togglePop} message={this.state.popupmessage}/> : null}		
+				</div>
+				 <div className='center  ma mt3-l'>
+							<article className="signin w-30 w-40-m center br3 pa3 pa3-ns ba shadow-2">
 								   		<main className="pa4 black-80">
 											  <div className="measure">
 											    <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
@@ -124,7 +117,8 @@ class SignIn extends React.Component {
 												</div>
 											</main>
 										</article>
-						</div>}
+						</div>
+						
 			</div>
 	  );
 	}

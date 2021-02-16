@@ -1,4 +1,5 @@
 import React from 'react';
+import Popup from '../popup/popup'
 
 class Register extends React.Component {
 	constructor(props) {
@@ -6,7 +7,9 @@ class Register extends React.Component {
 		this.state = {
 			name: '',
 			email: '',
-			password: ''
+			password: '',
+			popupstate: false,
+			popupmessage: ''
 		}
 	}
 
@@ -22,18 +25,37 @@ class Register extends React.Component {
 		this.setState({password: event.target.value})		
 	}
 
+	togglePop = () => {
+    this.setState({popupstate: !this.state.popupstate});
+  }
+
+  changemessage = (message) => {
+  	this.setState({popupmessage: message})
+  	console.log('fromchangemessage',this.popupmessage)
+  }
+
 	onSubmitRegister = (props) => {
+		this.setState({popupstate: true})
+		this.changemessage('loading...')
 		const ValidateEmail = (mail) => {			 
 			 if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(this.state.email))
 			  {
 			  	return (true)
-			  }
-			  	alert("You have entered an invalid email address!")			           
+			  } return (
+			  	this.changemessage('You have entered an invalid email address!'),
+					this.setState({popupstate:true})
+					)
+			  	// alert("You have entered an invalid email address!")			           
 		}
 		const ValidatePassword = (pass) => {
 			if (this.state.password.length > 6) {
 				return (true)
-			} alert('Password must be longer than 6 characters')			 
+			} return (
+			  	this.changemessage('Password must be longer than 6 characters'),
+					this.setState({popupstate:true})
+					)
+
+			// alert('Password must be longer than 6 characters')			 
 		}
 		if (this.state.name !== '' && this.state.email !== '' && this.state.password !== ''){
 			if (ValidateEmail(true) && ValidatePassword(true)) {
@@ -52,19 +74,30 @@ class Register extends React.Component {
 							this.props.loadUser(user)
 							this.props.onRouteChange('home')
 						} else {
-							alert('This user email is already registered')
+							return(
+								this.changemessage('This user email is already registered'),
+								this.setState({popupstate:true})
+								)
+							// alert('This user email is already registered')
 						}
 					})
 			}
 		} else {
-			alert('All fields must be filled')
+			return(
+				this.changemessage('All fields must be filled'),
+				this.setState({popupstate:true})
+				)
+			// alert('All fields must be filled')
 		}
 	}
 
 	render() {
 	  return (
 	  	<div>
-		  	 <div className='center ma mt3-l'>
+	  		<div className='center mt4'>		
+					 {this.state.popupstate ? <Popup className='center w-100 flex' toggle={this.togglePop} message={this.state.popupmessage}/> : null}		
+				</div>
+		  	<div className='center ma mt3-l'>
 			    	<article className="signin w-30 w-50-m center br3 pa3 pa3-ns ba shadow-2">
 				   		<main className="pa4 black-80">
 							  <div className="measure">
