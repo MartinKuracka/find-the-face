@@ -37,12 +37,17 @@ class SignIn extends React.Component {
 						this.props.onRouteChange('home') 
 					} else {
 						return (
-							alert('Wrong Credentials'),
-							console.log('message from return'),
-							this.setState({popupstate: false})
+							this.setState({popupmessage: 'wrong credentials'}),
+							console.log('message from return', this.popupmessage),
+							// alert('wrong credentials')
+							this.changemessage('wrong credentials')
+							// this.setState({popupstate: false})
 						)
+
 					}
+						
 				})
+			
 	}
 
 	// progressIndicator = () => {
@@ -50,13 +55,19 @@ class SignIn extends React.Component {
 	// 	this.toggleModal()
 	// }
 
-	togglePopup = () => {
-    this.setState({popupstate: true});
+	togglePopup = (value) => {
+    this.setState({popupstate: !this.state.popupstate});
     console.log('popupstate is ',this.state.popupstate)
   }
 
+  changemessage = (message) => {
+  	this.setState({popupmessage: message})
+  	console.log('fromchangemessage',this.popupmessage)
+  }
+
 	onSubmitSignIn = (props) => {
-		this.togglePopup()
+		this.setState({popupstate: !this.state.popupstate}) //this is working - proven!!!!
+		this.setState({popupmessage: 'loading...'}) // this works too !!!
 		console.log('fetch initiated')
 		this.dataFetching()
 	
@@ -69,8 +80,8 @@ class SignIn extends React.Component {
 	render() {
 		return (
 			<div>
-				{this.state.popupstate === true
-					? <Popup popupmessage={this.state.popupmessage} />
+				{this.state.popupstate
+					? <Popup popupmessage={this.state.popupmessage} togglePopup={this.togglePopup} changemessage={this.changemessage} />
 					: <div className='center  ma mt3-l'>
 										<article className="signin w-30 w-40-m center br3 pa3 pa3-ns ba shadow-2">
 								   		<main className="pa4 black-80">
