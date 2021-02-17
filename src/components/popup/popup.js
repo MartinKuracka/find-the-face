@@ -16,7 +16,7 @@ class Popup extends React.Component {
 
 	render () {
 		return (
-			<div className='popup-box pointer center w-20 br3 mt5 b--green b--solid' onClick={this.handleClick} >
+			<div className='bounce-in-top popup-box pointer center w-20 br3 mt5 b--green b--solid' onClick={this.handleClick} >
 				{ <div className='tc'>
 						<h2>
 							{this.props.message}

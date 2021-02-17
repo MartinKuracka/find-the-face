@@ -8,7 +8,7 @@ const Rank = ({name}) => {
 	  <div className='item-a f4 mt4'>
 		<div className='white fw1-l'>
 			<div className='animatename'>
-				<span className='animatename f2 fw7'>Hi {name},</span>
+				<span className='tracking-in-expand f2 fw7'>Hi {name},</span>
 			</div>
 			<br/>
 				{'your current entry count is'}

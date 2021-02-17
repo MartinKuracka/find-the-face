@@ -71,7 +71,7 @@ class SignIn extends React.Component {
  
 	render() {
 		return (
-			<div>
+			<div className='slide-in-right'>
 				<div className='center mt4'>		
 					 {this.state.popupstate ? <Popup className='center w-100 flex' toggle={this.togglePop} message={this.state.popupmessage}/> : null}		
 				</div>
@@ -80,8 +80,8 @@ class SignIn extends React.Component {
 								   		<main className="pa4 black-80">
 											  <div className="measure">
 											    <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-											      <legend className="f2 fw6 ph0 mh0">Sign In</legend>
-											      <div className="mt3">
+											      <legend className="text-focus-in f2 fw6 ph0 mh0">Sign In</legend>
+											      <div className="text2-focus-in mt3">
 											        <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
 											        <input 
 											        	className="pa2 br2 input-reset bg-transparent hover-bg-blue hover-white w-100" 
@@ -91,7 +91,7 @@ class SignIn extends React.Component {
 											        	onChange={this.onEmailChange}
 											        />
 											      </div>
-											      <div className="mv3">
+											      <div className="text3-focus-in mv3">
 											        <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
 											        <input 
 											        	className="b pa2 br2 input-reset bg-transparent hover-bg-blue hover-white w-100" 
@@ -102,14 +102,14 @@ class SignIn extends React.Component {
 											        />
 											      </div>				      
 											    </fieldset>
-											    <div className="">
+											    <div className="text4-focus-in">
 											      <input 
 											      	onClick={this.onSubmitSignIn}
 											      	className="ph3 br2 bg-dark-blue white pv2 input-reset ba b--black bg-transparent grow pointer f5 dib" 
 											      	type="submit" 
 											      	value="Sign in" />
 											    </div>
-											    <div className="lh-copy mt3">
+											    <div className="text4-focus-in lh-copy mt3">
 											      <p 
 											      onClick={this.onRegisterPress} 
 											      className="f6 link black db pointer">Register</p>

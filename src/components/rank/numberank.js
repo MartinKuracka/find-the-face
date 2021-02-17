@@ -3,7 +3,7 @@ import './rank.css';
 
 const NoRank = ({entries}) => {
 		return (
-			<div className='animaterank item-b br4 pt5 pb mb5 tc ma5 mt4 mr0 b--light-green b--solid'>
+			<div className='shake-bottom animaterank item-b br4 pt5 pb mb5 tc ma5 mt4 mr0 b--light-green b--solid'>
 				{entries}
 			</div>
 		)

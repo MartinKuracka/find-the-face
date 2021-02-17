@@ -93,7 +93,7 @@ class Register extends React.Component {
 
 	render() {
 	  return (
-	  	<div>
+	  	<div className='scale-in-hor-center'>
 	  		<div className='center mt4'>		
 					 {this.state.popupstate ? <Popup className='center w-100 flex' toggle={this.togglePop} message={this.state.popupmessage}/> : null}		
 				</div>
@@ -103,17 +103,17 @@ class Register extends React.Component {
 							  <div className="measure">
 							    <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
 							      <legend className="f2 fw6 ph0 mh0">Register</legend>
-							       <div className="mt3">
+							       <div className="text-focus-in mt3">
 							        <label className="db fw6 lh-copy f6" htmlFor="name">Name</label>
 							        <input 
-							        	className="pa2 br2 input-reset bg-transparent hover-bg-blue hover-white w-100" 
+							        	className=" pa2 br2 input-reset bg-transparent hover-bg-blue hover-white w-100" 
 							        	type="text" 
 							        	name="name"  
 							        	id="name" 
 							        	onChange={this.onNameChange}
 							        />
 							      </div>
-							      <div className="mt3">
+							      <div className="text2-focus-in mt3">
 							        <label className="db bafw6 lh-copy f6" htmlFor="email-address">Email</label>
 							        <input 
 							        	className="pa2 br2 input-reset bg-transparent hover-bg-blue hover-white w-100" 
@@ -123,7 +123,7 @@ class Register extends React.Component {
 							        	onChange={this.onEmailChange}
 							        />
 							      </div>
-							      <div className="mv3">
+							      <div className="text3-focus-in mv3">
 							        <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
 							        <input 
 							        	className="b pa2 br2 input-reset bg-transparent hover-bg-blue hover-white w-100" 
@@ -134,7 +134,7 @@ class Register extends React.Component {
 							        />
 							      </div>				      
 							    </fieldset>
-							    <div className='center w-100'>
+							    <div className='text4-focus-in center w-100'>
 								    <div className="center">
 								      <input 				      	
 								      	onClick={() => this.props.onRouteChange('signin')} className="pa3 pv2 input-reset br2 ba b--black bg-transparent bg-dark-blue white grow pointer f5 dib" 

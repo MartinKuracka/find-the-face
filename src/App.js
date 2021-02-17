@@ -12,6 +12,7 @@ import ImageLinkForm from './components/ImageLinkForm/imageLinkForm';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import ParticleParameters from './components/particles';
 import Particles from 'react-particles-js';
+import './animations.css';
 
 const initialState = {
       input: '',
@@ -110,7 +111,7 @@ class App extends React.Component {
         { route === 'home'  // condition - if the route state is 'signin', will show sign in form. If the state of route is different, will show the rest after :. ? is for IF and : is for ELSE
           ? <div className=''>
               <Navigation className='spread pa2' onRouteChange={this.onRouteChange}/> 
-              <div className='cont-grid ba w-70 ml-auto b--light-green b--solid'>
+              <div className='slide-in-elliptic-right-bck color-change-2x cont-grid ba w-70 ml-auto b--light-green b--solid'>
                  <InfoBox />
                  <Rank className='item-a' name={this.state.user.name}/>
                  <NoRank className='' entries={this.state.user.entries}/>
