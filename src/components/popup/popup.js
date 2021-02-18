@@ -2,13 +2,6 @@ import React from 'react';
 import './popup.css';
 
 class Popup extends React.Component {
-	// constructor (props) {
-	// 	super(props);
-	// 	this.state = {
-	// 		togglepopup: this.props.tooglePopup,
-	// 		popupmessage: this.props.popupmessage
-	// 	}
-	// }
 
 	handleClick = () => {
 	   this.props.toggle();
@@ -22,7 +15,7 @@ class Popup extends React.Component {
 							{this.props.message}
 						</h2>
 						<div>
-							{this.props.message === 'loading...'
+							{this.props.message === 'loading...' || this.props.message === 'reading faces...'
 							? null
 							: <p>click me</p>}
 						</div>						

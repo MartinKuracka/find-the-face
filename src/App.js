@@ -13,13 +13,17 @@ import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import ParticleParameters from './components/particles';
 import Particles from 'react-particles-js';
 import './animations.css';
+import Popup from './components/popup/popup'
 
 const initialState = {
       input: '',
       imageUrl: '',
       box: {},
+      boxes: [],      
       route: 'signin',
       isSignedIn: false,
+      popupstate: false,
+      popupmessage: '',
       user: {
         id: '',
         name: '',
@@ -47,25 +51,40 @@ class App extends React.Component {
     }})
   }
 
-  calculateFaceLocation = (data) => {
-    const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
-    const image = document.getElementById('inputImage');
-    const width = Number(image.width);
-    const height = Number(image.height);
-    return {
-      leftCol: clarifaiFace.left_col * width,
-      topRow: clarifaiFace.top_row * height,
-      rightCol: width - (clarifaiFace.right_col * width),
-      bottomRow: height - (clarifaiFace.bottom_row * height)
+  calculateFaceLocation = (data) => {   
+    this.setState({boxes:[]})     
+    const facesDataArray = data.outputs[0].data.regions;
+    let i;
+    for (i=0;i<facesDataArray.length;i++) {
+      const clarifaiFace = facesDataArray[i].region_info.bounding_box;
+      const image = document.getElementById('inputImage');
+      const width = Number(image.width);
+      const height = Number(image.height);      
+      this.setState ({
+        box: {
+         leftCol: clarifaiFace.left_col * width,
+         topRow: clarifaiFace.top_row * height,
+         rightCol: width - (clarifaiFace.right_col * width),
+         bottomRow: height - (clarifaiFace.bottom_row * height) 
+        }             
+      })
+        // console.log('box value',this.state.box); 
+        this.setState({boxes: this.state.boxes.concat(this.state.box)});        
+        console.log('boxes', this.state.boxes)  
     }
+
   }
 
-  displayFaceBox = (box) => {
-    this.setState({box: box});
+  displayFaceBox = (box) => {  
+    this.setState({box: box});  
   }
 
   onInputChange = (event) => {
     this.setState({input: event.target.value});
+  }
+
+  togglePop = () => {
+    this.setState({popupstate: !this.state.popupstate});
   }
 
   onRouteChange = (route) => {
@@ -75,8 +94,12 @@ class App extends React.Component {
     this.setState({route: route})
   }
 
-  onPictureSumit = () => {
-    this.setState({imageUrl: this.state.input});
+  onPictureSubmit = () => {
+    this.setState({
+      imageUrl: this.state.input,
+      popupstate:true,
+      popupmessage: 'reading faces...'
+    })
       fetch('https://desolate-harbor-55159.herokuapp.com/imageurl', {
           method: 'post',
           headers: {'Content-type': 'application/json'},
@@ -93,22 +116,25 @@ class App extends React.Component {
             body: JSON.stringify({
               id: this.state.user.id
               })
-            }).then(response => response.json())
+            }).then(response => response.json()).then(this.setState({popupstate:false}))
               .then(entryID => {
                 this.setState(Object.assign(this.state.user, { entries: entryID}))
               })
           }
-       this.displayFaceBox(this.calculateFaceLocation(response))})    
+       this.displayFaceBox(this.calculateFaceLocation(response)) })    
       .catch (error => console.log(error))    
   }
 
   render() { 
-    const {box, imageUrl, route} = this.state; // this is to get rid of the this.state in whole render statement for cleaner code for parameters in the {}.
+    const {boxes, imageUrl, route} = this.state; 
     return (
       <div className="">
+        <div className='center mt4'>    
+           {this.state.popupstate ? <Popup className='center w-100 flex' toggle={this.togglePop} message={this.state.popupmessage}/> : null}    
+        </div>
         <Particles className='particles' params={ParticleParameters}/>
         <Header className='header' />
-        { route === 'home'  // condition - if the route state is 'signin', will show sign in form. If the state of route is different, will show the rest after :. ? is for IF and : is for ELSE
+        { route === 'home'
           ? <div className=''>
               <Navigation className='spread pa2' onRouteChange={this.onRouteChange}/> 
               <div className='slide-in-elliptic-right-bck color-change-2x cont-grid ba w-70 ml-auto b--light-green b--solid'>
@@ -117,8 +143,9 @@ class App extends React.Component {
                  <NoRank className='' entries={this.state.user.entries}/>
                  <ImageLinkForm 
                     onInputChange={this.onInputChange} 
-                    onPictureSumit={this.onPictureSumit}/>
-                 <FaceRecognition className='item-e' box={box} imageUrl={imageUrl} />  
+                    onPictureSubmit={this.onPictureSubmit}
+                    togglePop={this.togglePop}/>
+                 <FaceRecognition className='item-e' box={boxes} imageUrl={imageUrl} />  
                  <Image />  
               </div>             
             </div>          
