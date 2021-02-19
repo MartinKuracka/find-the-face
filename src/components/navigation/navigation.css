@@ -11,3 +11,11 @@ background: -webkit-linear-gradient(38deg, rgba(13,131,76,1) 0%, rgba(144,198,20
 background: linear-gradient(38deg, rgba(13,131,76,1) 0%, rgba(144,198,205,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d834c",endColorstr="#90c6cd",GradientType=1);
 }
+
+/* media querries */
+
+@media only screen and (max-width: 800px) {
+	.nav {
+		margin-right: 1%;
+	}
+}

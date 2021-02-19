@@ -12,6 +12,13 @@
   }
 }
 
+.flextext {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
 @keyframes animenumber {
 	29% {
     transform: rotate(0deg);

@@ -137,7 +137,7 @@ class App extends React.Component {
         { route === 'home'
           ? <div className=''>
               <Navigation className='spread pa2' onRouteChange={this.onRouteChange}/> 
-              <div className='slide-in-elliptic-right-bck color-change-2x cont-grid ba w-70 ml-auto b--light-green b--solid'>
+              <div className='slide-in-elliptic-right-bck cont-grid ba b--solid'>
                  <InfoBox />
                  <Rank className='item-a' name={this.state.user.name}/>
                  <NoRank className='' entries={this.state.user.entries}/>

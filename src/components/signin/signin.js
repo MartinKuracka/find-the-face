@@ -76,7 +76,7 @@ class SignIn extends React.Component {
 					 {this.state.popupstate ? <Popup className='center w-100 flex' toggle={this.togglePop} message={this.state.popupmessage}/> : null}		
 				</div>
 				 <div className='center  ma mt3-l'>
-							<article className="signin w-30 w-40-m center br3 pa3 pa3-ns ba shadow-2">
+							<article className="signin w-30-l w-50-m center br3 pa3 pa3-ns ba shadow-2">
 								   		<main className="pa4 black-80">
 											  <div className="measure">
 											    <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
