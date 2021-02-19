@@ -138,7 +138,7 @@
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row-start: 4;  
-    margin-top: 7rem;
+    margin-top: 3rem;
   }
   
   .item-e {
@@ -146,5 +146,13 @@
     grid-column-end: 4;
     grid-row-start: 3; 
     margin-left: 0px auto;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
   }
 }
