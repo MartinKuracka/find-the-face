@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/find-the-face/static/css/main.a121c7cc.chunk.css",
+    "main.css": "/find-the-face/static/css/main.ba1d95bf.chunk.css",
     "main.js": "/find-the-face/static/js/main.b7a3611d.chunk.js",
     "main.js.map": "/find-the-face/static/js/main.b7a3611d.chunk.js.map",
     "runtime-main.js": "/find-the-face/static/js/runtime-main.bd2ab995.js",
@@ -10,7 +10,7 @@
     "static/js/2.003b1dae.chunk.js.map": "/find-the-face/static/js/2.003b1dae.chunk.js.map",
     "index.html": "/find-the-face/index.html",
     "static/css/2.31461e4f.chunk.css.map": "/find-the-face/static/css/2.31461e4f.chunk.css.map",
-    "static/css/main.a121c7cc.chunk.css.map": "/find-the-face/static/css/main.a121c7cc.chunk.css.map",
+    "static/css/main.ba1d95bf.chunk.css.map": "/find-the-face/static/css/main.ba1d95bf.chunk.css.map",
     "static/js/2.003b1dae.chunk.js.LICENSE.txt": "/find-the-face/static/js/2.003b1dae.chunk.js.LICENSE.txt",
     "static/media/face.5ae0a412.png": "/find-the-face/static/media/face.5ae0a412.png",
     "static/media/hdrimg.b5576fbf.png": "/find-the-face/static/media/hdrimg.b5576fbf.png",
@@ -20,7 +20,7 @@
     "static/js/runtime-main.bd2ab995.js",
     "static/css/2.31461e4f.chunk.css",
     "static/js/2.003b1dae.chunk.js",
-    "static/css/main.a121c7cc.chunk.css",
+    "static/css/main.ba1d95bf.chunk.css",
     "static/js/main.b7a3611d.chunk.js"
   ]
 }
