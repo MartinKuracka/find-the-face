@@ -132,7 +132,7 @@ class App extends React.Component {
         <div className='center mt4'>    
            {this.state.popupstate ? <Popup className='center w-100 flex' toggle={this.togglePop} message={this.state.popupmessage}/> : null}    
         </div>
-        <Particles className='particles' params={ParticleParameters}/>
+
         <Header className='header' />
         { route === 'home'
           ? <div className=''>
