@@ -10,6 +10,7 @@ import SignIn from './components/signin/signin';
 import Register from './components/register/register';
 import ImageLinkForm from './components/ImageLinkForm/imageLinkForm';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
+import Footer from './components/footer/footer';
 import ParticleParameters from './components/particles';
 import Particles from 'react-particles-js';
 import './animations.css';
@@ -130,7 +131,9 @@ class App extends React.Component {
     return (
       <div className="">
         <div className='center mt4'>    
-           {this.state.popupstate ? <Popup className='center w-100 flex' toggle={this.togglePop} message={this.state.popupmessage}/> : null}    
+           {this.state.popupstate 
+             ? <Popup className='center w-100 flex' toggle={this.togglePop} message={this.state.popupmessage}/> 
+             : null}    
         </div>
         <div>
         {window.innerWidth > 600
@@ -151,7 +154,7 @@ class App extends React.Component {
                     onPictureSubmit={this.onPictureSubmit}
                     togglePop={this.togglePop}/>
                  <FaceRecognition className='item-e' box={boxes} imageUrl={imageUrl} />  
-                 <Image />  
+                 <Image />                   
               </div>             
             </div>          
           : (route === 'signin' 
@@ -162,8 +165,10 @@ class App extends React.Component {
                 <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
               </div>
             )
-        }
+        }  
+        <Footer/>      
       </div>
+      
     )
   };
 }
