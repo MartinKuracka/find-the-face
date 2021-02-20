@@ -12,17 +12,11 @@
 	margin-left: 5%;
 	margin-top: 30px;
 	margin-bottom: 50px;
+	font-weight: 200;
 }
 
 h2 {
 	font-size: 1.2rem;
-	background: rgb(71,67,58);
-background: -moz-linear-gradient(90deg, rgba(71,67,58,1) 0%, rgba(170,177,121,1) 100%);
-background: -webkit-linear-gradient(90deg, rgba(71,67,58,1) 0%, rgba(170,177,121,1) 100%);
-background: linear-gradient(90deg, rgba(71,67,58,1) 0%, rgba(170,177,121,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#47433a",endColorstr="#aab179",GradientType=1);
- 	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
 }
 
 .header-background {

@@ -7,7 +7,7 @@ const Navigation = ({onRouteChange}) => {
 		<div className='nav tc content-end'>
 			<Tilt className="Tilt br2" options={{ max : 55 }} >
 		  	<nav className='content-end '>
-					<p className='nav-size nav-box link dim white underline pa3 pt3 pointer br2 shadow-2 b--light-green b--solid'
+					<p className='nav-size link dim underline pointer br2'
 					 	 onClick={() => onRouteChange('signin')}> Sign Out</p>
 				</nav>
 			</Tilt>
