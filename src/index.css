@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Oswald&display=swap');
 
 body {
   /* min-width: 500px; */
@@ -14,7 +14,8 @@ body {
   background: linear-gradient(95deg, rgba(6,74,18,1) 0%, rgba(63,134,89,1) 49%, rgba(119,217,203,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#064a12",endColorstr="#77d9cb",GradientType=1);
   background-attachment: fixed;
-  font-family: 'Lora', Courier, Monospace;
+  font-family: 'Oswald', Courier, Monospace;
+  font-weight: 500;
 }
 
 button {

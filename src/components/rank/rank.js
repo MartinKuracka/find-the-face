@@ -6,13 +6,15 @@ const Rank = ({name}) => {
 	name = name.toUpperCase();
 	return (
 	  <div className='item-a f4 mt4'>
-		<div className='white fw1-l'>
-			<div className='animatename'>
-				<span className='tracking-in-expand f2 fw7'>Hi {name},</span>
+		<div className='card-box fw1-l pa2'>
+			<div className='tracking-in-expand'>
+				<span className='tracking-in-expand content-center  f3 fw7'>Hi {name},</span>
 			</div>
-			<br/>
-				{'your current entry count is'}
-			</div>			
+			<div className='tracking-in-expand'>
+			{'your current entry count is'}
+			</div>
+				
+		</div>			
       </div>  
 	);
 }
