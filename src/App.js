@@ -134,7 +134,7 @@ class App extends React.Component {
         </div>
         <Particles className='particles' params={ParticleParameters}/>
         <Header className='header' />
-        { route === 'home'
+        { route === 'signin'
           ? <div className=''>
               <Navigation className='spread pa2' onRouteChange={this.onRouteChange}/> 
               <div className='slide-in-elliptic-right-bck cont-grid ba b--solid'>
