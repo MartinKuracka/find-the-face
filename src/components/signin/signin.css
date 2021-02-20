@@ -7,6 +7,7 @@
 
 @media only screen and (max-width: 600px) {
   .signin {
-    margin-top: 10rem ;
+    margin-top: 10rem;
+    width: 90vw;
   }
 }
