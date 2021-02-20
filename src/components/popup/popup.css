@@ -3,3 +3,12 @@
 	position: absolute;
 	margin: 0px auto;
 }
+
+/* media querries */
+
+@media only screen and (max-width: 600px) {
+	.popup-box {
+		position:fixed;
+		margin-top: 25%;
+	}
+}
