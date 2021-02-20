@@ -1,7 +1,3 @@
-/*.App {
-  text-align: center;
-}*/
-
 .center {
   display:flex;
   justify-content: center;
@@ -46,20 +42,16 @@
   width: 80vw;
   min-height: 600px;
   height: auto;
+  border-radius: 10px;
   display: grid;
-<<<<<<< HEAD
   background:
   linear-gradient(45deg, #92baac 45px, transparent 45px)64px 64px,
   linear-gradient(45deg, #92baac 45px, transparent 45px,transparent 91px, #e1ebbd 91px, #e1ebbd 135px, transparent 135px),
   linear-gradient(-45deg, #92baac 23px, transparent 23px, transparent 68px,#92baac 68px,#92baac 113px,transparent 113px,transparent 158px,#92baac 158px);
   background-color:#e1ebbd;
   background-size: 128px 128px;
-  box-shadow: 10px 10px 10px 10px black;
+  box-shadow: 5px 5px 5px 5px black;
   min-height: 600px;
-=======
-  background: linear-gradient(180deg, rgba(6,74,18,1) 0%, rgba(63,134,89,1) 49%, rgba(119,217,203,1) 100%);  
-  box-shadow: 10px 10px 10px 10px black; 
->>>>>>> b06db7afc3e6e256ea2405ec2849fc783c3a2359
   grid-template-columns: 5% 20% 20% 50% 5%;
   grid-template-rows: 30% 30% 20% auto;
 }
@@ -91,7 +83,7 @@
   grid-column-start: 2;
   grid-column-end: 4;
   grid-row-start: 3;
-  margin-top: 100px;
+  margin-top: 7rem;
 }
 
 .item-e {
@@ -130,9 +122,7 @@
     width: 90vw;
     margin: 2rem auto;
     padding: 1rem; 
-    height: 140vh;   
-    background: linear-gradient(180deg, rgba(6,74,18,1) 0%, rgba(63,134,89,1) 49%, rgba(119,217,203,1) 100%);  
-    box-shadow: 10px 10px 10px 10px black;    
+    height: 130vh;   
     grid-template-columns: 5% 45% 45% 5%;
     grid-template-rows: 10% 10% 50% 10%;
   }
@@ -157,7 +147,7 @@
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row-start: 4;  
-    margin-top: 3rem;
+    margin-top: 9rem;
   }
   
   .item-e {
