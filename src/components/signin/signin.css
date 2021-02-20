@@ -1,4 +1,12 @@
 .signin {
-  margin-top: 300px;
+  margin-top: 15rem;
   background-color: white;
+}
+
+/* media querries */
+
+@media only screen and (max-width: 600px) {
+  .signin {
+    margin-top: 10rem ;
+  }
 }
