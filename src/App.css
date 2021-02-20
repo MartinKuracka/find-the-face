@@ -120,7 +120,7 @@
 @media only screen and (max-width: 600px) {
   .cont-grid{    
     width: 90vw;
-    margin: 2rem auto;
+    margin: 5rem auto;
     padding: 1rem; 
     height: 150vh;   
     grid-template-columns: 5% 45% 45% 5%;
