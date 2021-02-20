@@ -9,7 +9,7 @@ const Header = () => {
 			<img className='header-background' src={HeaderBackground}/>
 			<img className='slide-in-left head-img content-start tl' src={image} alt='header'/>
 			<h2 className='slide-in-left hd-margin w-30'>
-				Magic App to detect face in Your pictures
+				Magic App to detect faces in Your pictures
 			</h2>
 		</div>
 	)

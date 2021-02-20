@@ -8,11 +8,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: rgb(6,74,18);
-  background: -moz-linear-gradient(95deg, rgba(6,74,18,1) 0%, rgba(63,134,89,1) 49%, rgba(119,217,203,1) 100%);
-  background: -webkit-linear-gradient(95deg, rgba(6,74,18,1) 0%, rgba(63,134,89,1) 49%, rgba(119,217,203,1) 100%);
-  background: linear-gradient(95deg, rgba(6,74,18,1) 0%, rgba(63,134,89,1) 49%, rgba(119,217,203,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#064a12",endColorstr="#77d9cb",GradientType=1);
+  background: rgb(71,67,58);
+  background: -moz-linear-gradient(90deg, rgba(71,67,58,1) 0%, rgba(232,236,205,1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(71,67,58,1) 0%, rgba(232,236,205,1) 100%);
+  background: linear-gradient(90deg, rgba(71,67,58,1) 0%, rgba(232,236,205,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#47433a",endColorstr="#e8eccd",GradientType=1);
   background-attachment: fixed;
   font-family: 'Oswald', Courier, Monospace;
   font-weight: 500;

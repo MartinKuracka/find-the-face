@@ -16,7 +16,11 @@
 
 h2 {
 	font-size: 1.2rem;
-	background: -webkit-linear-gradient(45deg, #064a12, #57d9cb);
+	background: rgb(71,67,58);
+background: -moz-linear-gradient(90deg, rgba(71,67,58,1) 0%, rgba(170,177,121,1) 100%);
+background: -webkit-linear-gradient(90deg, rgba(71,67,58,1) 0%, rgba(170,177,121,1) 100%);
+background: linear-gradient(90deg, rgba(71,67,58,1) 0%, rgba(170,177,121,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#47433a",endColorstr="#aab179",GradientType=1);
  	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
@@ -43,5 +47,9 @@ h2 {
 		margin-left: 5%;
 		margin-top: 12rem;
 		width: 8rem;
+	}
+
+	.header-background {
+		height: 16rem;
 	}
 }

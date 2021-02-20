@@ -11,11 +11,11 @@
 }
 
 .nav-box {
-background: rgb(13,131,76);
-background: -moz-linear-gradient(38deg, rgba(13,131,76,1) 0%, rgba(144,198,205,1) 100%);
-background: -webkit-linear-gradient(38deg, rgba(13,131,76,1) 0%, rgba(144,198,205,1) 100%);
-background: linear-gradient(38deg, rgba(13,131,76,1) 0%, rgba(144,198,205,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d834c",endColorstr="#90c6cd",GradientType=1);
+	background: rgb(71,67,58);
+	background: -moz-linear-gradient(90deg, rgba(71,67,58,1) 0%, rgba(123,128,93,1) 100%);
+	background: -webkit-linear-gradient(90deg, rgba(71,67,58,1) 0%, rgba(123,128,93,1) 100%);
+	background: linear-gradient(90deg, rgba(71,67,58,1) 0%, rgba(123,128,93,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#47433a",endColorstr="#7b805d",GradientType=1);
 }
 
 /* media querries */
