@@ -86,10 +86,17 @@
 
 /* footer */
 .footer {
+  flex-direction: column;
+  justify-content: center;
   width: 100vw;
   bottom: 0px;
   margin-top: 180px;
   margin-bottom: 20px;
+}
+
+.f-i-size {
+  width: 80px;
+  height: auto;
 }
 
 /* media querries */
