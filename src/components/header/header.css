@@ -1,7 +1,7 @@
 .header {
 	/* margin-top: -200px; */
 	width: 100vw;
-	height: 1000px;
+	height: auto;
 	position: absolute;
 	background-size: cover;
 	background-repeat: no-repeat;
