@@ -71,7 +71,7 @@ class SignIn extends React.Component {
  
 	render() {
 		return (
-			<div className='slide-in-right'>
+			<div className='scale-in-hor-center'>
 				<div className='center mt4'>		
 					 {this.state.popupstate ? <Popup className='center w-100 flex' toggle={this.togglePop} message={this.state.popupmessage}/> : null}		
 				</div>
