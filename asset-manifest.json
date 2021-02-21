@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/find-the-face/static/css/main.3725c3a8.chunk.css",
-    "main.js": "/find-the-face/static/js/main.ee4786ea.chunk.js",
-    "main.js.map": "/find-the-face/static/js/main.ee4786ea.chunk.js.map",
+    "main.js": "/find-the-face/static/js/main.f9705d42.chunk.js",
+    "main.js.map": "/find-the-face/static/js/main.f9705d42.chunk.js.map",
     "runtime-main.js": "/find-the-face/static/js/runtime-main.bd2ab995.js",
     "runtime-main.js.map": "/find-the-face/static/js/runtime-main.bd2ab995.js.map",
     "static/css/2.31461e4f.chunk.css": "/find-the-face/static/css/2.31461e4f.chunk.css",
@@ -13,13 +13,13 @@
     "static/css/main.3725c3a8.chunk.css.map": "/find-the-face/static/css/main.3725c3a8.chunk.css.map",
     "static/js/2.de353da7.chunk.js.LICENSE.txt": "/find-the-face/static/js/2.de353da7.chunk.js.LICENSE.txt",
     "static/media/face.3026cda1.png": "/find-the-face/static/media/face.3026cda1.png",
-    "static/media/sample.e27e2bb9.png": "/find-the-face/static/media/sample.e27e2bb9.png"
+    "static/media/sample.eea22182.png": "/find-the-face/static/media/sample.eea22182.png"
   },
   "entrypoints": [
     "static/js/runtime-main.bd2ab995.js",
     "static/css/2.31461e4f.chunk.css",
     "static/js/2.de353da7.chunk.js",
     "static/css/main.3725c3a8.chunk.css",
-    "static/js/main.ee4786ea.chunk.js"
+    "static/js/main.f9705d42.chunk.js"
   ]
 }
