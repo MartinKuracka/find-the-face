@@ -94,6 +94,15 @@
   margin-left: 0px auto;
 }
 
+/* footer */
+
+.footer {
+  width: 100vw;
+  /* position: absolute; */
+  bottom: 0px;
+   /* margin-bottom: 20px ; */
+}
+
 /* media querries */
 
 @media only screen and (max-width: 1100px) {

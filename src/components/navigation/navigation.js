@@ -7,9 +7,9 @@ const Navigation = ({onRouteChange}) => {
 			<nav className='content-end '>
 				<p className='nav-size link dim underline pointer br2'
 					onClick={() => onRouteChange('signin')}> Sign Out</p>
-			</nav>			
+			</nav>
 		</div>
-		)	
+		)
 }
 
 export default Navigation;

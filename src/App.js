@@ -20,7 +20,7 @@ const initialState = {
       input: '',
       imageUrl: '',
       box: {},
-      boxes: [],      
+      boxes: [],
       route: 'signin',
       isSignedIn: false,
       popupstate: false,
@@ -31,7 +31,7 @@ const initialState = {
         email: '',
         password:'',
         entries: 0,
-        joined: '' 
+        joined: ''
       }
 }
 
@@ -48,36 +48,36 @@ class App extends React.Component {
       email: data.email,
       password: data.password,
       entries: data.entries,
-      joined: data.joined 
+      joined: data.joined
     }})
   }
 
-  calculateFaceLocation = (data) => {   
-    this.setState({boxes:[]})     
+  calculateFaceLocation = (data) => {
+    this.setState({boxes:[]})
     const facesDataArray = data.outputs[0].data.regions;
     let i;
     for (i=0;i<facesDataArray.length;i++) {
       const clarifaiFace = facesDataArray[i].region_info.bounding_box;
       const image = document.getElementById('inputImage');
       const width = Number(image.width);
-      const height = Number(image.height);      
+      const height = Number(image.height);
       this.setState ({
         box: {
          leftCol: clarifaiFace.left_col * width,
          topRow: clarifaiFace.top_row * height,
          rightCol: width - (clarifaiFace.right_col * width),
-         bottomRow: height - (clarifaiFace.bottom_row * height) 
-        }             
+         bottomRow: height - (clarifaiFace.bottom_row * height)
+        }
       })
-        // console.log('box value',this.state.box); 
-        this.setState({boxes: this.state.boxes.concat(this.state.box)});        
-        console.log('boxes', this.state.boxes)  
+        // console.log('box value',this.state.box);
+        this.setState({boxes: this.state.boxes.concat(this.state.box)});
+        console.log('boxes', this.state.boxes)
     }
 
   }
 
-  displayFaceBox = (box) => {  
-    this.setState({box: box});  
+  displayFaceBox = (box) => {
+    this.setState({box: box});
   }
 
   onInputChange = (event) => {
@@ -122,53 +122,55 @@ class App extends React.Component {
                 this.setState(Object.assign(this.state.user, { entries: entryID}))
               })
           }
-       this.displayFaceBox(this.calculateFaceLocation(response)) })    
-      .catch (error => console.log(error))    
+       this.displayFaceBox(this.calculateFaceLocation(response)) })
+      .catch (error => console.log(error))
   }
 
-  render() { 
-    const {boxes, imageUrl, route} = this.state; 
+  render() {
+    const {boxes, imageUrl, route} = this.state;
     return (
-      <div className="">
-        <div className='center mt4'>    
-           {this.state.popupstate 
-             ? <Popup className='center w-100 flex' toggle={this.togglePop} message={this.state.popupmessage}/> 
-             : null}    
+      <div>
+                <div className="">
+        <div className='center mt4'>
+           {this.state.popupstate
+             ? <Popup className='center w-100 flex' toggle={this.togglePop} message={this.state.popupmessage}/>
+             : null}
         </div>
         <div>
         {window.innerWidth > 600
           ? <Particles className='particles' params={ParticleParameters}/>
           : null}
         </div>
-        
+
         <Header className='header' />
         { route === 'home'
           ? <div className=''>
-              <Navigation className='spread pa2' onRouteChange={this.onRouteChange}/> 
+              <Navigation className='spread pa2' onRouteChange={this.onRouteChange}/>
               <div className='slide-in-elliptic-right-bck cont-grid ba b--solid'>
                  <InfoBox />
                  <Rank className='item-a' name={this.state.user.name}/>
                  <NoRank className='' entries={this.state.user.entries}/>
-                 <ImageLinkForm 
-                    onInputChange={this.onInputChange} 
+                 <ImageLinkForm
+                    onInputChange={this.onInputChange}
                     onPictureSubmit={this.onPictureSubmit}
                     togglePop={this.togglePop}/>
-                 <FaceRecognition className='item-e' box={boxes} imageUrl={imageUrl} />  
-                 <Image />                   
-              </div>             
-            </div>          
-          : (route === 'signin' 
-            ? <div>               
+                 <FaceRecognition className='item-e' box={boxes} imageUrl={imageUrl} />
+                 <Image />
+              </div>
+            </div>
+          : (route === 'signin'
+            ? <div>
                 <SignIn className='' onRouteChange={this.onRouteChange} loadUser={this.loadUser}/>
               </div>
             : <div>
                 <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
               </div>
             )
-        }  
-        <Footer/>      
+        }
+        <Footer className='footer'/>
       </div>
-      
+      </div>
+
     )
   };
 }
