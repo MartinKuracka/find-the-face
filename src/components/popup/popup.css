@@ -2,6 +2,7 @@
 	background-color: white;
 	position: absolute;
 	margin: 0px auto;
+	min-width: 200px;
 }
 
 /* media querries */

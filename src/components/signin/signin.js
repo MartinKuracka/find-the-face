@@ -21,7 +21,7 @@ class SignIn extends React.Component {
 		this.setState({signInPassword: event.target.value})
 	}
 
-	dataFetching = (props) => {			
+	dataFetching = (props) => {
 			fetch('https://desolate-harbor-55159.herokuapp.com/signin', {
 			method: 'post',
 			headers: {'Content-type': 'application/json'},
@@ -37,15 +37,15 @@ class SignIn extends React.Component {
 				.then(user => {
 					if (user.email === this.state.signInEmail) {
 						this.props.loadUser(user)
-						this.props.onRouteChange('home') 
+						this.props.onRouteChange('home')
 					} else {
 						return (
 							this.setState({popupmessage: 'wrong credentials'}),
-							console.log('message from return', this.popupmessage),						
+							console.log('message from return', this.popupmessage),
 							this.changemessage('wrong credentials')
 						)
-					}						
-				})							
+					}
+				})
 	}
 
 	togglePop = () => {
@@ -62,18 +62,18 @@ class SignIn extends React.Component {
 		this.setState({popupmessage: 'loading...'}) // this works too !!!
 		console.log('fetch initiated')
 		this.dataFetching()
-	
+
 	}
 
 	onRegisterPress = () => {
 		this.props.onRouteChange('register')
 	}
- 
+
 	render() {
 		return (
 			<div className='scale-in-hor-center'>
-				<div className='center mt4'>		
-					 {this.state.popupstate ? <Popup className='center w-100 flex' toggle={this.togglePop} message={this.state.popupmessage}/> : null}		
+				<div className='center mt4'>
+					 {this.state.popupstate ? <Popup className='center w-100 flex' toggle={this.togglePop} message={this.state.popupmessage}/> : null}
 				</div>
 				 <div className='center  ma mt3-l'>
 							<article className="signin w-30-l w-50-m center br3 pa3 pa3-ns ba shadow-2">
@@ -83,42 +83,42 @@ class SignIn extends React.Component {
 											      <legend className="text-focus-in f2 fw6 ph0 mh0">Sign In</legend>
 											      <div className="text2-focus-in mt3">
 											        <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
-											        <input 
-											        	className="pa2 br2 input-reset bg-transparent hover-bg-blue hover-white w-100" 
-											        	type="email" 
-											        	name="email-address"  
+											        <input
+											        	className="pa2 br2 input-reset bg-transparent hover-bg-blue hover-white w-100"
+											        	type="email"
+											        	name="email-address"
 											        	id="email-address"
 											        	onChange={this.onEmailChange}
 											        />
 											      </div>
 											      <div className="text3-focus-in mv3">
 											        <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
-											        <input 
-											        	className="b pa2 br2 input-reset bg-transparent hover-bg-blue hover-white w-100" 
-											        	type="password" 
-											        	name="password"  
+											        <input
+											        	className="b pa2 br2 input-reset bg-transparent hover-bg-blue hover-white w-100"
+											        	type="password"
+											        	name="password"
 											        	id="password"
 											        	onChange={this.onPasswordChange}
 											        />
-											      </div>				      
+											      </div>
 											    </fieldset>
 											    <div className="text4-focus-in">
-											      <input 
+											      <input
 											      	onClick={this.onSubmitSignIn}
-											      	className="ph3 br2 bg-dark-blue white pv2 input-reset ba b--black bg-transparent grow pointer f5 dib" 
-											      	type="submit" 
+											      	className="ph3 br2 bg-dark-blue white pv2 input-reset ba b--black bg-transparent grow pointer f5 dib"
+											      	type="submit"
 											      	value="Sign in" />
 											    </div>
 											    <div className="text4-focus-in lh-copy mt3">
-											      <p 
-											      onClick={this.onRegisterPress} 
+											      <p
+											      onClick={this.onRegisterPress}
 											      className="f6 link black db pointer">Register</p>
 											    </div>
 												</div>
 											</main>
 										</article>
 						</div>
-						
+
 			</div>
 	  );
 	}
