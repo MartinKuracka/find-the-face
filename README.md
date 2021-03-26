@@ -6,6 +6,7 @@ Firstly it was built and tested locally and then it was deployed to Heroku as an
 I have found out thet initial loading of user information after login can sometimes take several seconds due to starting of the server.
 It also shows basic form data validation for email and password on user register. (correct email format using @ and password at least 6 characters long)
 
+You need to create account in order to use it - You can use any email as long as it is in valid format and remember the password in case You want to come back.
 
 ## After logging IN
 
