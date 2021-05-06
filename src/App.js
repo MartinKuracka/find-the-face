@@ -11,10 +11,9 @@ import Register from './components/register/register';
 import ImageLinkForm from './components/ImageLinkForm/imageLinkForm';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Footer from './components/footer/footer';
-import ParticleParameters from './components/particles';
-import Particles from 'react-particles-js';
 import './animations.css';
-import Popup from './components/popup/popup'
+import Popup from './components/popup/popup';
+import tachyons from 'tachyons';
 
 const initialState = {
       input: '',
@@ -55,8 +54,7 @@ class App extends React.Component {
   calculateFaceLocation = (data) => {
     this.setState({boxes:[]})
     const facesDataArray = data.outputs[0].data.regions;
-    let i;
-    for (i=0;i<facesDataArray.length;i++) {
+    for (let i=0;i<facesDataArray.length;i++) {
       const clarifaiFace = facesDataArray[i].region_info.bounding_box;
       const image = document.getElementById('inputImage');
       const width = Number(image.width);
@@ -69,11 +67,8 @@ class App extends React.Component {
          bottomRow: height - (clarifaiFace.bottom_row * height)
         }
       })
-        // console.log('box value',this.state.box);
-        this.setState({boxes: this.state.boxes.concat(this.state.box)});
-        console.log('boxes', this.state.boxes)
+      this.setState({boxes: this.state.boxes.concat(this.state.box)});
     }
-
   }
 
   displayFaceBox = (box) => {
@@ -119,7 +114,7 @@ class App extends React.Component {
               })
             }).then(response => response.json()).then(this.setState({popupstate:false}))
               .then(entryID => {
-                this.setState(Object.assign(this.state.user, { entries: entryID}))
+                this.setState(Object.assign(this.state.user, {entries: entryID}))
               })
           }
        this.displayFaceBox(this.calculateFaceLocation(response)) })
@@ -129,24 +124,19 @@ class App extends React.Component {
   render() {
     const {boxes, imageUrl, route} = this.state;
     return (
-      <div>
-                <div className="">
-        <div className='center mt4'>
-           {this.state.popupstate
-             ? <Popup className='center w-100 flex' toggle={this.togglePop} message={this.state.popupmessage}/>
-             : null}
-        </div>
         <div>
-        {window.innerWidth > 600
-          ? <Particles className='particles' params={ParticleParameters}/>
-          : null}
+          <div className='center mt4'>
+            {this.state.popupstate
+              ? <Popup className='center w-100 flex' toggle={this.togglePop} message={this.state.popupmessage}/>
+              : null}
+          </div>
+          <div>
         </div>
-
         <Header className='header' />
-        { route === 'home'
-          ? <div className=''>
+        {route === 'signin'
+          ? <div>
               <Navigation className='spread pa2' onRouteChange={this.onRouteChange}/>
-              <div className='slide-in-elliptic-right-bck cont-grid ba b--solid'>
+              <div className='slide-in-elliptic-right-bck cont-grid'>
                  <InfoBox />
                  <Rank className='item-a' name={this.state.user.name}/>
                  <NoRank className='' entries={this.state.user.entries}/>
@@ -155,7 +145,7 @@ class App extends React.Component {
                     onPictureSubmit={this.onPictureSubmit}
                     togglePop={this.togglePop}/>
                  <FaceRecognition className='item-e' box={boxes} imageUrl={imageUrl} />
-                 <Image />
+                 {!imageUrl ? <Image /> : null }
               </div>
             </div>
           : (route === 'signin'
@@ -169,10 +159,8 @@ class App extends React.Component {
         }
         <Footer className='footer'/>
       </div>
-      </div>
-
     )
-  };
+  }
 }
 
 export default App;

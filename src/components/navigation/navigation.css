@@ -21,10 +21,6 @@
 /* media querries */
 
 @media only screen and (max-width: 800px) {
-	/* .nav {
-		margin-right: -1rem; 
-	} */
-
 	p {
 		display: block;
 		margin-block-start: 0;

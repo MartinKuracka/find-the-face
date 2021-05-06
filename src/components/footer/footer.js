@@ -9,7 +9,7 @@ const Footer = () => {
                 <img className='center f-i-size' src={FootImage} alt='footer'></img>
                 <br/>
                 <p className='center f-text'>
-                  Designed with love by WebMarK
+                  Designed by WebMarK
                 </p>
              </div>
         </div>

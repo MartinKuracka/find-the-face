@@ -34,13 +34,13 @@
   height: auto;
   border-radius: 10px;
   display: grid;
-  background-image:
-  radial-gradient(closest-side, transparent 0%, transparent 75%, #B6CC66 76%, #B6CC66 85%, #EDFFDB 86%, #EDFFDB 94%, #FFFFFF 95%, #FFFFFF 103%, #D9E6A7 104%, #D9E6A7 112%, #798B3C 113%, #798B3C 121%, #FFFFFF 122%, #FFFFFF 130%, #E0EAD7 131%, #E0EAD7 140%),
-  radial-gradient(closest-side, transparent 0%, transparent 75%, #B6CC66 76%, #B6CC66 85%, #EDFFDB 86%, #EDFFDB 94%, #FFFFFF 95%, #FFFFFF 103%, #D9E6A7 104%, #D9E6A7 112%, #798B3C 113%, #798B3C 121%, #FFFFFF 122%, #FFFFFF 130%, #E0EAD7 131%, #E0EAD7 140%);
-  background-size: 110px 110px;
-  background-color: #C8D3A7;
-  background-position: 0 0, 55px 55px;
+  background: rgb(88,31,117);
+  background: -moz-linear-gradient(180deg, rgba(88,31,117,1) 4%, rgba(66,111,150,0.7315301120448179) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(88,31,117,1) 4%, rgba(66,111,150,0.7315301120448179) 100%);
+  background: linear-gradient(180deg, rgba(88,31,117,1) 4%, rgba(66,111,150,0.7315301120448179) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#581f75",endColorstr="#426f96",GradientType=1);
   box-shadow: 5px 5px 5px 5px black;
+  opacity: 0.5;
   min-height: 600px;
   grid-template-columns: 5% 20% 20% 50% 5%;
   grid-template-rows: 30% 30% 20% auto;
